@@ -1,0 +1,1454 @@
+{
+  "metainfo" : {
+    "type" : "Composer",
+    "fabricId" : "1013",
+    "jobId" : "jobs/Staging_AIRFLOW253_SCALA_COMPOSER_JOB",
+    "name" : "Staging_AIRFLOW253_SCALA_COMPOSER_JOB",
+    "dagName" : "staging_abhisheks_e2etests_Scala_Sanity_Project_Staging_AIRFLOW253_SCALA_COMPOSER_JOB",
+    "schedule" : "0 0 1 1 *",
+    "enabled" : true,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "retries" : 0,
+      "retry_delay" : 1,
+      "ignore_first_depends_on_past" : true,
+      "do_xcom_push" : true
+    },
+    "availableFabrics" : [ {
+      "id" : "22",
+      "name" : "dev_airflow_prophecy_managed",
+      "trialStartDate" : 1695736560346
+    }, {
+      "id" : "25",
+      "name" : "dev_airflow_mwaa"
+    }, {
+      "id" : "1013",
+      "name" : "dev_airflow_253"
+    }, {
+      "id" : "24",
+      "name" : "dev_airflow"
+    }, {
+      "id" : "2393",
+      "name" : "dev_airflow_263"
+    }, {
+      "id" : "2418",
+      "name" : "dev_aiflow_open_source",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    }, {
+      "id" : "2442",
+      "name" : "Automation_python_AirflowOpenSource",
+      "artifactsLocation" : "/mnt/airflow/test/artifacts"
+    }, {
+      "id" : "2447",
+      "name" : "sanity_airflow_os",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    } ],
+    "catchup" : true,
+    "tags" : [ ],
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : { }
+      },
+      "params" : { },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ {
+      "id" : "49/functions/airflowFunctions/squared_numbers",
+      "name" : "squared_numbers",
+      "code" : "def squared_numbers(number):\n    print('hello')\n    return (number*number)/d",
+      "initCode" : "d=10",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/join_2_strings",
+      "name" : "join_2_strings",
+      "code" : "def join_2_strings(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/delete_me",
+      "name" : "delete_me",
+      "code" : "def delete_me(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/load_resource",
+      "name" : "load_resource",
+      "code" : "def load_resource(dag_dir, dag_id, relative_filepath):\n    import os\n    import zipfile\n    import tempfile\n\n    res = \"\"\n    zip_file_found = None\n    for filename in os.listdir(dag_dir):\n        if filename.startswith(dag_id) and filename.endswith('.zip'):\n            zip_file_found = os.path.join(dag_dir, filename)\n            break\n\n    if not zip_file_found:\n        print(f\"Zip for dag: {dag_id} not found\")\n        return res\n\n    with tempfile.TemporaryDirectory() as tmpdirname:\n        with zipfile.ZipFile(zip_file_found, 'r') as zip_ref:\n            zip_ref.extractall(tmpdirname)\n\n\n        target_file_path = os.path.join(tmpdirname, dag_id.lower() , 'resources', relative_filepath)\n        if os.path.exists(target_file_path):\n            with open(target_file_path, 'r') as file:\n                res = file.read()\n        return res",
+      "initCode" : "",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/get_feed_config",
+      "name" : "get_feed_config",
+      "code" : "def get_feed_config(file_contents, search_keys):\n    for line in file_contents.splitlines():\n        # Split the line by commas and strip to remove leading/trailing whitespaces\n        fields = [field.strip() for field in line.split(',')]\n\n        # Check if there are enough fields\n        if len(fields) < 32:\n            continue\n\n        # Extract the first 5 fields as keys\n        keys = fields[:5]\n\n        # Check if the current keys match the search keys\n        if keys == search_keys:\n            # Extract and return the remaining 27 fields as values\n            return tuple(fields[5:])\n\n    # Return an empty tuple if the key is not found or if the value is empty\n    return ()",
+      "initCode" : "",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    } ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false
+    }
+  },
+  "processes" : {
+    "vM8gI4w73sq9nPxl8HhkD$$5uqpi48pZeFXlY-Ri5Q3M" : {
+      "id" : "vM8gI4w73sq9nPxl8HhkD$$5uqpi48pZeFXlY-Ri5Q3M",
+      "component" : "ForEachLoop",
+      "metadata" : {
+        "label" : "ForEachLoop_1",
+        "slug" : "ForEachLoop_1",
+        "x" : -260,
+        "y" : -420
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "xWFAz-IRJByiFReqDHjzq$$w_fbWFKNhmt-qqgqL0hT6",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "cKakWW-AwngOYozvo5882$$v0h1afKlBqBp1JMeHtEt0",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "loopVariables" : null,
+        "taskId" : null,
+        "loopSources" : [ {
+          "type" : "xcom",
+          "taskId" : "Python_1",
+          "key" : "return_value",
+          "loopVariables" : [ {
+            "name" : "config_1",
+            "type" : "string",
+            "expression" : "value[\"c1_data\"][0][\"data\"]",
+            "enabled" : true
+          }, {
+            "name" : "config_2",
+            "type" : "boolean",
+            "expression" : "value[\"c2_data\"][0][\"data\"]",
+            "enabled" : true
+          }, {
+            "name" : "config_3",
+            "type" : "number",
+            "expression" : "value[\"c3_data\"]",
+            "enabled" : true
+          }, {
+            "name" : "config_4",
+            "type" : "number",
+            "expression" : "value[\"c3_data\"]",
+            "enabled" : true
+          } ]
+        } ]
+      },
+      "connections" : [ ],
+      "processes" : {
+        "L6laU1sMDhhkHFUmDRkGo$$cOX13NyhEujM2ObdmUeub" : {
+          "id" : "L6laU1sMDhhkHFUmDRkGo$$cOX13NyhEujM2ObdmUeub",
+          "component" : "Python",
+          "metadata" : {
+            "label" : "Python_2",
+            "slug" : "Python_2",
+            "x" : -220,
+            "y" : -100
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "8ENZ_lcBxwxD0Z7EShHSI$$eyBOr9Yo20xeMXJ_Dw57u",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "VFOO2wNK8SR9ZgPMMPKqW$$RVdSWRaIa79kQe10S-C_E",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "templatesExts" : null,
+            "code" : "def return_method():\n    print(f\"{config_1},{config_2},{config_3}\")",
+            "valueInLogs" : true,
+            "opArgs" : null,
+            "templatesDict" : null,
+            "taskId" : null,
+            "opKwargs" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        }
+      }
+    },
+    "emByXcs5IKG62pywPtuRG" : {
+      "id" : "emByXcs5IKG62pywPtuRG",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_1",
+        "slug" : "DBT_1",
+        "x" : -60,
+        "y" : -40
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "lOJbK81t2shyoq6ejt-dA",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "Fr16gVhHxIHbuW2ydDn4A",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "retries" : 0
+      },
+      "properties" : {
+        "cacheSelectedOnly" : null,
+        "gitSubPath" : null,
+        "runModelWithParents" : false,
+        "defer" : null,
+        "noDefer" : null,
+        "runSeed" : true,
+        "gitEntity" : "branch",
+        "noPartialParse" : null,
+        "warnErrorOptions" : null,
+        "gitTokenSecret" : null,
+        "state" : null,
+        "useExperimentalParser" : null,
+        "gitSshUrl" : null,
+        "indirectSelection" : null,
+        "partialParse" : null,
+        "runRun" : true,
+        "vars" : null,
+        "noPrint" : null,
+        "quiet" : null,
+        "projectId" : "67",
+        "runOnlyModel" : false,
+        "favorState" : null,
+        "failFast" : null,
+        "noStaticParser" : null,
+        "runTest" : true,
+        "select" : null,
+        "recordTimingInfo" : null,
+        "fullRefresh" : true,
+        "noCacheSelectedOnly" : null,
+        "noFavorState" : null,
+        "isProphecyManaged" : false,
+        "profile" : null,
+        "noVersionCheck" : null,
+        "noWriteJson" : false,
+        "printerWidth" : null,
+        "sqlFabricId" : "6",
+        "gitEntityValue" : "main_staging",
+        "logFormat" : null,
+        "runModelWithChildren" : false,
+        "dbtProfileSecret" : null,
+        "models" : null,
+        "target" : null,
+        "exclude" : null,
+        "runDeps" : true,
+        "noAnonymousUsageStats" : null,
+        "selector" : null,
+        "targetPath" : null,
+        "threads" : null,
+        "warnError" : null,
+        "currentProjectModels" : [ {
+          "label" : "env_uitesting_main_model_snow_1",
+          "value" : "env_uitesting_main_model_snow_1",
+          "id" : "67/.prophecy/metadata/sqlmodels/env_uitesting_main_model_snow_1",
+          "name" : "env_uitesting_main_model_snow_1"
+        } ],
+        "profilesDir" : null,
+        "taskId" : null,
+        "logPath" : null,
+        "storeFailures" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "Br8qhcqK1ISAXq2CX73QV" : {
+      "id" : "Br8qhcqK1ISAXq2CX73QV",
+      "component" : "S3FileSensor",
+      "metadata" : {
+        "label" : "S3FileSensor_1",
+        "slug" : "S3FileSensor_1",
+        "x" : 100,
+        "y" : -360
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "doRX_94vUtJCMc4e8WeuC",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "4sJuBfXmmCS0MZd8q1p5_",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "awsConnectionId" : "aws_default",
+        "wildCardMatch" : true,
+        "responseCheck" : null,
+        "verifySslCertificates" : true,
+        "s3Paths" : "dags/*",
+        "bucketName" : "prophecy-mwaa-243",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "p3LMMILxH8uP3OhSa--hd" : {
+      "id" : "p3LMMILxH8uP3OhSa--hd",
+      "component" : "Email",
+      "metadata" : {
+        "label" : "Email_2",
+        "slug" : "Email_2",
+        "x" : 160,
+        "y" : 100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XB_ZK9Zcx9BEQ5CaPOMor",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "bqNR1-NMpX5ABPQpt6Ual",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "emailCC" : null,
+        "subject" : "Hello sir real one",
+        "emailBCC" : null,
+        "emailTo" : "abhisheks@prophecy.io",
+        "emailConnectionId" : "email_default",
+        "htmlContent" : "This one is for python sanity email. Correct one buddy",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "MqWe-5P1-3NeYHdBJAlrj" : {
+      "id" : "MqWe-5P1-3NeYHdBJAlrj",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "SM_IO_SCALA_BASIC",
+        "slug" : "SM_IO_SCALA_BASIC",
+        "x" : -560,
+        "y" : -200
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Nvwg40HacXIdtyFlwggNi",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "F3UMl-ByxRbpDh-gZTIpN",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "runJson" : null,
+        "databricksConnId" : "databricks_default",
+        "clusterSize" : "46/small_dev",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "c_test",
+            "optional" : true,
+            "comment" : "test_str",
+            "kind" : {
+              "type" : "string",
+              "value" : "this is something new son"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "c_array",
+            "optional" : false,
+            "comment" : "array desc",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "string",
+                "value" : null
+              },
+              "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "c_record3",
+            "optional" : false,
+            "comment" : "record ddesc",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "c_val3",
+                "optional" : false,
+                "comment" : "c value record",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crr",
+                    "optional" : false,
+                    "comment" : "crr desc",
+                    "kind" : {
+                      "type" : "string",
+                      "value" : "asdasdasd"
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "bool",
+            "optional" : false,
+            "comment" : "bool desc",
+            "kind" : {
+              "type" : "boolean",
+              "value" : true
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "double",
+            "optional" : false,
+            "comment" : "double desc",
+            "kind" : {
+              "type" : "double",
+              "value" : 234324
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "record_array",
+            "optional" : false,
+            "comment" : "sewr",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "array",
+                "optional" : false,
+                "comment" : "wer",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : [ "23", "121" ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "array_record",
+            "optional" : false,
+            "comment" : "sdf",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "werw",
+                  "optional" : false,
+                  "kind" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "isReferenced" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "ewr",
+                  "optional" : false,
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "isReferenced" : false,
+                  "isWorkflowNodeConfiguration" : false
+                } ]
+              },
+              "value" : [ {
+                "ewr" : [ "22" ],
+                "werw" : "332"
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "Subgraph_1",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "c_test",
+                "optional" : true,
+                "comment" : "test_str",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is something new son"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_array",
+                "optional" : false,
+                "comment" : "array desc",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_record3",
+                "optional" : false,
+                "comment" : "record ddesc",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c_val3",
+                    "optional" : false,
+                    "comment" : "c value record",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "crr",
+                        "optional" : false,
+                        "comment" : "crr desc",
+                        "kind" : {
+                          "type" : "string",
+                          "value" : "asdasdasd"
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "bool",
+                "optional" : false,
+                "comment" : "bool desc",
+                "kind" : {
+                  "type" : "boolean",
+                  "value" : true
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "double",
+                "optional" : false,
+                "comment" : "double desc",
+                "kind" : {
+                  "type" : "double",
+                  "value" : 234324
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "record_array",
+                "optional" : false,
+                "comment" : "sewr",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "array",
+                    "optional" : false,
+                    "comment" : "wer",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : [ "23" ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "array_record",
+                "optional" : false,
+                "comment" : "sdf",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "werw",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "ewr",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "ewr" : [ "22" ],
+                    "werw" : "332"
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "Subgraph_2",
+                "optional" : false,
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c_test",
+                    "optional" : true,
+                    "comment" : "test_str",
+                    "kind" : {
+                      "type" : "string",
+                      "value" : "this is something new son"
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "c_array",
+                    "optional" : false,
+                    "comment" : "array desc",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "c_record3",
+                    "optional" : false,
+                    "comment" : "record ddesc",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "c_val3",
+                        "optional" : false,
+                        "comment" : "c value record",
+                        "kind" : {
+                          "type" : "record",
+                          "fields" : [ {
+                            "name" : "crr",
+                            "optional" : false,
+                            "comment" : "crr desc",
+                            "kind" : {
+                              "type" : "string",
+                              "value" : "asdasdasd"
+                            },
+                            "isReferenced" : false,
+                            "isWorkflowNodeConfiguration" : false
+                          } ]
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "bool",
+                    "optional" : false,
+                    "comment" : "bool desc",
+                    "kind" : {
+                      "type" : "boolean",
+                      "value" : true
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "double",
+                    "optional" : false,
+                    "comment" : "double desc",
+                    "kind" : {
+                      "type" : "double",
+                      "value" : 234324
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "record_array",
+                    "optional" : false,
+                    "comment" : "sewr",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "array",
+                        "optional" : false,
+                        "comment" : "wer",
+                        "kind" : {
+                          "type" : "array",
+                          "elementType" : {
+                            "type" : "string",
+                            "value" : null
+                          },
+                          "value" : [ "23" ]
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "array_record",
+                    "optional" : false,
+                    "comment" : "sdf",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "record",
+                        "fields" : [ {
+                          "name" : "werw",
+                          "optional" : false,
+                          "kind" : {
+                            "type" : "string",
+                            "value" : null
+                          },
+                          "isReferenced" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        }, {
+                          "name" : "ewr",
+                          "optional" : false,
+                          "kind" : {
+                            "type" : "array",
+                            "elementType" : {
+                              "type" : "string",
+                              "value" : null
+                            },
+                            "value" : null
+                          },
+                          "isReferenced" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        } ]
+                      },
+                      "value" : [ {
+                        "ewr" : [ "22" ],
+                        "werw" : "332"
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : true
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          }, {
+            "name" : "Subgraph_3",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "c_test",
+                "optional" : true,
+                "comment" : "test_str",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is something new son"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_array",
+                "optional" : false,
+                "comment" : "array desc",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_record3",
+                "optional" : false,
+                "comment" : "record ddesc",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c_val3",
+                    "optional" : false,
+                    "comment" : "c value record",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "crr",
+                        "optional" : false,
+                        "comment" : "crr desc",
+                        "kind" : {
+                          "type" : "string",
+                          "value" : "asdasdasd"
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "bool",
+                "optional" : false,
+                "comment" : "bool desc",
+                "kind" : {
+                  "type" : "boolean",
+                  "value" : true
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "double",
+                "optional" : false,
+                "comment" : "double desc",
+                "kind" : {
+                  "type" : "double",
+                  "value" : 234324
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "record_array",
+                "optional" : false,
+                "comment" : "sewr",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "array",
+                    "optional" : false,
+                    "comment" : "wer",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : [ "23" ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "array_record",
+                "optional" : false,
+                "comment" : "sdf",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "werw",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "ewr",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "ewr" : [ "22" ],
+                    "werw" : "332"
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          }, {
+            "name" : "c_string",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "IO_SCALA_BASIC - DEFAULT"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "c_int",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : 1
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "Scala_Sanity_Project" : [ "default", "test-common-with-another", "newinstance1" ]
+          },
+          "overrides" : {
+            "record_array" : {
+              "array" : [ {
+                "type" : "literal",
+                "value" : "22"
+              } ]
+            },
+            "c_array" : [ {
+              "type" : "literal",
+              "value" : "arry"
+            } ],
+            "c_record3" : {
+              "c_val3" : {
+                "crr" : {
+                  "type" : "literal",
+                  "value" : "test1"
+                }
+              }
+            },
+            "c_test" : {
+              "type" : "literal",
+              "value" : "testoverrid"
+            },
+            "double" : {
+              "type" : "literal",
+              "value" : 22
+            },
+            "bool" : {
+              "type" : "literal",
+              "value" : true
+            },
+            "array_record" : [ {
+              "werw" : {
+                "type" : "literal",
+                "value" : "22"
+              }
+            } ],
+            "Subgraph_1" : {
+              "c_array" : [ {
+                "type" : "literal",
+                "value" : "test"
+              } ],
+              "Subgraph_2" : {
+                "record_array" : {
+                  "array" : [ {
+                    "type" : "literal",
+                    "value" : "22"
+                  } ]
+                },
+                "c_test" : {
+                  "type" : "literal",
+                  "value" : "dasd"
+                },
+                "double" : {
+                  "type" : "literal",
+                  "value" : 22
+                },
+                "bool" : {
+                  "type" : "literal",
+                  "value" : true
+                },
+                "array_record" : [ {
+                  "werw" : {
+                    "type" : "literal",
+                    "value" : "asd"
+                  },
+                  "ewr" : [ {
+                    "type" : "literal",
+                    "value" : "22"
+                  } ]
+                } ]
+              },
+              "c_test" : {
+                "type" : "literal",
+                "value" : "hello"
+              },
+              "double" : {
+                "type" : "literal",
+                "value" : 22
+              },
+              "bool" : {
+                "type" : "literal",
+                "value" : true
+              },
+              "array_record" : [ {
+                "werw" : {
+                  "type" : "literal",
+                  "value" : "22"
+                },
+                "ewr" : [ {
+                  "type" : "literal",
+                  "value" : "44"
+                } ]
+              } ]
+            },
+            "Subgraph_3" : {
+              "c_test" : {
+                "type" : "literal",
+                "value" : "this is"
+              }
+            }
+          },
+          "selectedInstance" : {
+            "value" : "default",
+            "type" : "literal"
+          }
+        },
+        "taskId" : null,
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/IO_SCALA_BASIC"
+        }
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "BQWw3lYQ5oEvaSsqLHSXs" : {
+      "id" : "BQWw3lYQ5oEvaSsqLHSXs",
+      "component" : "TriggerDag",
+      "metadata" : {
+        "label" : "TriggerDag_1",
+        "slug" : "TriggerDag_1",
+        "x" : -280,
+        "y" : -120
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iGK72j1zmcIZuJVzAK4iz",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "LJq1LlRg2cI8qIu8siqu5",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "pokeInterval" : null,
+        "resetDagRun" : false,
+        "executionDate" : null,
+        "dagId" : {
+          "type" : "literal",
+          "value" : "Staging_Shared_Airflow_Composer_Python_dag"
+        },
+        "selectionType" : "dag",
+        "conf" : null,
+        "jobId" : null,
+        "waitForCompletion" : false,
+        "runId" : null,
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "XyZdkE_svihA5RldTiwY4" : {
+      "id" : "XyZdkE_svihA5RldTiwY4",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "ShellScript",
+        "slug" : "ShellScript",
+        "x" : -640,
+        "y" : -40
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Vj5scw25YbU78fjpOMmc7",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "i-WXI1KcyDCtODS2Cv7BA",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "ls -ltr",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "Rz0U8k7uJTq2nZ1Rt-65u" : {
+      "id" : "Rz0U8k7uJTq2nZ1Rt-65u",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : -140,
+        "y" : -280
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "fxlC_S0owH5XMnmzHZCoM",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "so0i0nXb2rHnXENIaAg0C",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "echo \"test\"",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "TNTabbpPMbABmbAixogyQ" : {
+      "id" : "TNTabbpPMbABmbAixogyQ",
+      "component" : "TaskGroup",
+      "metadata" : {
+        "label" : "TaskGroup_1",
+        "slug" : "TaskGroup_1",
+        "x" : -220,
+        "y" : -560
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4KCHF68tcoIXKkOGHjAcl",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "gx1j7HRAeWRt2M2oENAZP",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "taskId" : null
+      },
+      "connections" : [ {
+        "id" : "ToN6cHfBkVMBZbWTRGti4",
+        "source" : "4RUbRhMvoxVFVeJ7xJUE7",
+        "target" : "gHRnMXhyDxsXAbPviMx2l",
+        "sourcePort" : "AK_4SqgXM0BBHlo9uDSDI",
+        "targetPort" : "wcaVGz94XxgfSmNJkUnS_"
+      }, {
+        "id" : "i5UsJ9_AiEbyq1ivzPUHW",
+        "source" : "gHRnMXhyDxsXAbPviMx2l",
+        "target" : "e3fPj22nxZZKTYUtIDFbK",
+        "sourcePort" : "Y-b10uG_PKKnnPdmBZ2Ig",
+        "targetPort" : "cZ3titD9Q3_SMydRBwtS2"
+      } ],
+      "processes" : {
+        "gHRnMXhyDxsXAbPviMx2l" : {
+          "id" : "gHRnMXhyDxsXAbPviMx2l",
+          "component" : "S3FileSensor",
+          "metadata" : {
+            "label" : "S3FileSensor_1_1",
+            "slug" : "S3FileSensor_1_1",
+            "x" : -79.99998474121094,
+            "y" : -100.00000762939453
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "wcaVGz94XxgfSmNJkUnS_",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "Y-b10uG_PKKnnPdmBZ2Ig",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "awsConnectionId" : "aws_default",
+            "wildCardMatch" : false,
+            "responseCheck" : null,
+            "verifySslCertificates" : false,
+            "s3Paths" : "test/validation_data/test_source.json",
+            "bucketName" : "qa-prophecy",
+            "taskId" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        },
+        "4RUbRhMvoxVFVeJ7xJUE7" : {
+          "id" : "4RUbRhMvoxVFVeJ7xJUE7",
+          "component" : "HTTPSensor",
+          "metadata" : {
+            "label" : "HTTPSensor_1_1",
+            "slug" : "HTTPSensor_1_1",
+            "x" : -260,
+            "y" : -140
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "Mvvbq_rCh9_fGPXw8Q5Tj",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "AK_4SqgXM0BBHlo9uDSDI",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "pokeInterval" : 60,
+            "httpConnectionId" : "http_default",
+            "responseCheck" : null,
+            "endpoint" : "",
+            "requestParams" : null,
+            "taskId" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        },
+        "e3fPj22nxZZKTYUtIDFbK" : {
+          "id" : "e3fPj22nxZZKTYUtIDFbK",
+          "component" : "Slack",
+          "metadata" : {
+            "label" : "Slack_1_1",
+            "slug" : "Slack_1_1",
+            "x" : 179.99998474121094,
+            "y" : 60.00000762939453
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "cZ3titD9Q3_SMydRBwtS2",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "4birqfGUAE0kRLcOyBGNf",
+              "slug" : ""
+            } ]
+          },
+          "settings" : {
+            "retries" : 0
+          },
+          "properties" : {
+            "channel" : "abhyslackpub",
+            "text" : "Python Sanity Job Run",
+            "token" : null,
+            "slackConnectionId" : "slack_default",
+            "taskId" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        }
+      }
+    },
+    "PYNaPbqkepmMqvejCFNDl" : {
+      "id" : "PYNaPbqkepmMqvejCFNDl",
+      "component" : "Python",
+      "metadata" : {
+        "label" : "Python_1",
+        "slug" : "Python_1",
+        "x" : -540,
+        "y" : -400
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SAShlA3iKtL-Z4u1TEb-S",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "w5-kLEnxqtq4XMaL5msv8",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "templatesExts" : null,
+        "code" : "def return_method():\n    test_config1_iteration1 = join_2_strings(squared_numbers(2), \"test value\")\n    test_config1_iteration2 = join_2_strings(squared_numbers(4), \"test value iteration2\")\n    return [\n        {\n            \"c1_data\": [\n                {\n                    \"data\": test_config1_iteration1\n                }\n            ],\n            \"c2_data\": [\n                {\n                    \"data\": join_2_strings(squared_numbers(3), \"test value\") == \"hello\"\n                }\n            ],\n            \"c3_data\": 1\n        },\n        {\n            \"c1_data\": [\n                {\n                    \"data\": test_config1_iteration2\n                }\n            ],\n            \"c2_data\": [\n                {\n                    \"data\": join_2_strings(squared_numbers(5), \"test value\") != \"hello\"\n                }\n            ],\n            \"c3_data\": 2\n        }\n    ]",
+        "valueInLogs" : true,
+        "opArgs" : null,
+        "templatesDict" : null,
+        "taskId" : null,
+        "opKwargs" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "wBKWEXM5KvKZmYkyIfNX5" : {
+      "id" : "wBKWEXM5KvKZmYkyIfNX5",
+      "component" : "Branch",
+      "metadata" : {
+        "label" : "Branch_1_1",
+        "slug" : "Branch_1_1",
+        "x" : -380,
+        "y" : 100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3uzelmII1U_EC7ZROcUE1",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "_vJ-ZNiHP1zUa9VNZB_P_",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "callback" : "def which_gem_to_run():\n    return \"Email_2\"",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "QqzY5YK_tkvbMKXM_vNlV" : {
+      "id" : "QqzY5YK_tkvbMKXM_vNlV",
+      "component" : "Email",
+      "metadata" : {
+        "label" : "Email_1_1",
+        "slug" : "Email_1_1",
+        "x" : 240,
+        "y" : 220
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WjPC49oaWaB6erZogfUig",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "y0wGr5OS9dVRJeXHLWQb9",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "emailCC" : null,
+        "subject" : "Hello abhisheks",
+        "emailBCC" : null,
+        "emailTo" : "abhisheks@prophecy.io",
+        "emailConnectionId" : "email_default",
+        "htmlContent" : "Python sanity job run buddy",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ {
+    "id" : "4G18EzGPwMnFHz-Q23FWS",
+    "source" : "MqWe-5P1-3NeYHdBJAlrj",
+    "target" : "Rz0U8k7uJTq2nZ1Rt-65u",
+    "sourcePort" : "F3UMl-ByxRbpDh-gZTIpN",
+    "targetPort" : "fxlC_S0owH5XMnmzHZCoM"
+  }, {
+    "id" : "ufbdnBo94ORfONU8C2hju",
+    "source" : "Rz0U8k7uJTq2nZ1Rt-65u",
+    "target" : "Br8qhcqK1ISAXq2CX73QV",
+    "sourcePort" : "so0i0nXb2rHnXENIaAg0C",
+    "targetPort" : "doRX_94vUtJCMc4e8WeuC"
+  }, {
+    "id" : "hN1mzkHX6tADQvA7egcEL",
+    "source" : "wBKWEXM5KvKZmYkyIfNX5",
+    "target" : "p3LMMILxH8uP3OhSa--hd",
+    "sourcePort" : "_vJ-ZNiHP1zUa9VNZB_P_",
+    "targetPort" : "XB_ZK9Zcx9BEQ5CaPOMor"
+  }, {
+    "id" : "MNVP7Zc5bW5cJJ_eEOFId",
+    "source" : "wBKWEXM5KvKZmYkyIfNX5",
+    "target" : "QqzY5YK_tkvbMKXM_vNlV",
+    "sourcePort" : "_vJ-ZNiHP1zUa9VNZB_P_",
+    "targetPort" : "WjPC49oaWaB6erZogfUig"
+  }, {
+    "id" : "1h0KLFl-pdPpgLDZEdbg9",
+    "source" : "XyZdkE_svihA5RldTiwY4",
+    "target" : "emByXcs5IKG62pywPtuRG",
+    "sourcePort" : "i-WXI1KcyDCtODS2Cv7BA",
+    "targetPort" : "lOJbK81t2shyoq6ejt-dA"
+  }, {
+    "id" : "01YPwNEdqtpd95o5c2tPl",
+    "source" : "XyZdkE_svihA5RldTiwY4",
+    "target" : "wBKWEXM5KvKZmYkyIfNX5",
+    "sourcePort" : "i-WXI1KcyDCtODS2Cv7BA",
+    "targetPort" : "3uzelmII1U_EC7ZROcUE1"
+  }, {
+    "id" : "CIBWsH-m_8rSdq56V6qQU",
+    "source" : "PYNaPbqkepmMqvejCFNDl",
+    "target" : "TNTabbpPMbABmbAixogyQ",
+    "sourcePort" : "w5-kLEnxqtq4XMaL5msv8",
+    "targetPort" : "4KCHF68tcoIXKkOGHjAcl"
+  }, {
+    "id" : "TSZFUEQtGO33dHtd_4pdg",
+    "source" : "PYNaPbqkepmMqvejCFNDl",
+    "target" : "vM8gI4w73sq9nPxl8HhkD$$5uqpi48pZeFXlY-Ri5Q3M",
+    "sourcePort" : "w5-kLEnxqtq4XMaL5msv8",
+    "targetPort" : "xWFAz-IRJByiFReqDHjzq$$w_fbWFKNhmt-qqgqL0hT6"
+  }, {
+    "id" : "l9BY-HJSO_uA5Zftkgsu3",
+    "source" : "XyZdkE_svihA5RldTiwY4",
+    "target" : "BQWw3lYQ5oEvaSsqLHSXs",
+    "sourcePort" : "i-WXI1KcyDCtODS2Cv7BA",
+    "targetPort" : "iGK72j1zmcIZuJVzAK4iz"
+  } ]
+}

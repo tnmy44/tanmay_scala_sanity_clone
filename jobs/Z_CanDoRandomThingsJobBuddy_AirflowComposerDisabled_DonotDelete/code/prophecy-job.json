@@ -1,0 +1,1177 @@
+{
+  "metainfo" : {
+    "type" : "Composer",
+    "fabricId" : "1013",
+    "jobId" : "jobs/Z_CanDoRandomThingsJobBuddy_AirflowComposerDisabled_DonotDelete",
+    "name" : "Z_CanDoRandomThingsJobBuddy_AirflowComposerDisabled_DonotDelete",
+    "dagName" : "staging_abhisheks_e2etests_Scala_Sanity_Project_Z_CanDoRandomThingsJobBuddy_AirflowComposerDisabled_DonotDelete",
+    "schedule" : "0 0 1 1 *",
+    "enabled" : false,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "ignore_first_depends_on_past" : true,
+      "do_xcom_push" : true
+    },
+    "availableFabrics" : [ {
+      "id" : "22",
+      "name" : "dev_airflow_prophecy_managed",
+      "trialStartDate" : 1695736560346
+    }, {
+      "id" : "25",
+      "name" : "dev_airflow_mwaa"
+    }, {
+      "id" : "1013",
+      "name" : "dev_airflow_253"
+    }, {
+      "id" : "24",
+      "name" : "dev_airflow"
+    }, {
+      "id" : "2393",
+      "name" : "dev_airflow_263"
+    }, {
+      "id" : "2418",
+      "name" : "dev_aiflow_open_source",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    }, {
+      "id" : "2442",
+      "name" : "Automation_python_AirflowOpenSource",
+      "artifactsLocation" : "/mnt/airflow/test/artifacts"
+    }, {
+      "id" : "2447",
+      "name" : "sanity_airflow_os",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    } ],
+    "catchup" : true,
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : { }
+      },
+      "params" : { },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ {
+      "id" : "49/functions/airflowFunctions/squared_numbers",
+      "name" : "squared_numbers",
+      "code" : "def squared_numbers(number):\n    print('hello')\n    return (number*number)/d",
+      "initCode" : "d=10",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/join_2_strings",
+      "name" : "join_2_strings",
+      "code" : "def join_2_strings(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/delete_me",
+      "name" : "delete_me",
+      "code" : "def delete_me(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/load_resource",
+      "name" : "load_resource",
+      "code" : "def load_resource(dag_dir, dag_id, relative_filepath):\n    import os\n    import zipfile\n    import tempfile\n\n    res = \"\"\n    zip_file_found = None\n    for filename in os.listdir(dag_dir):\n        if filename.startswith(dag_id) and filename.endswith('.zip'):\n            zip_file_found = os.path.join(dag_dir, filename)\n            break\n\n    if not zip_file_found:\n        print(f\"Zip for dag: {dag_id} not found\")\n        return res\n\n    with tempfile.TemporaryDirectory() as tmpdirname:\n        with zipfile.ZipFile(zip_file_found, 'r') as zip_ref:\n            zip_ref.extractall(tmpdirname)\n\n\n        target_file_path = os.path.join(tmpdirname, dag_id.lower() , 'resources', relative_filepath)\n        if os.path.exists(target_file_path):\n            with open(target_file_path, 'r') as file:\n                res = file.read()\n        return res",
+      "initCode" : "",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/get_feed_config",
+      "name" : "get_feed_config",
+      "code" : "def get_feed_config(file_contents, search_keys):\n    for line in file_contents.splitlines():\n        # Split the line by commas and strip to remove leading/trailing whitespaces\n        fields = [field.strip() for field in line.split(',')]\n\n        # Check if there are enough fields\n        if len(fields) < 32:\n            continue\n\n        # Extract the first 5 fields as keys\n        keys = fields[:5]\n\n        # Check if the current keys match the search keys\n        if keys == search_keys:\n            # Extract and return the remaining 27 fields as values\n            return tuple(fields[5:])\n\n    # Return an empty tuple if the key is not found or if the value is empty\n    return ()",
+      "initCode" : "",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    } ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false
+    }
+  },
+  "processes" : {
+    "O9yc3Xbu6VE_uAU3dmFwH$$fp7JEOlIq3EZQVe3G8uDJ" : {
+      "id" : "O9yc3Xbu6VE_uAU3dmFwH$$fp7JEOlIq3EZQVe3G8uDJ",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_0",
+        "slug" : "Pipeline_0",
+        "x" : -160,
+        "y" : -120
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "H-bCrfZ_AtY2UABbFe5jG$$E0J5Ctv9RMNlk6wwiq1wz",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "rhV2GPNPQaMDd-SehQOaY$$utlLqMWqoueD_2V0Wx410",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "runJson" : null,
+        "databricksConnId" : "",
+        "clusterSize" : "1/small",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "c_test",
+            "optional" : true,
+            "comment" : "test_str this is randome description for this field @!#$!@$#$^$%*^(*(_()+&#$%%#~!@",
+            "kind" : {
+              "type" : "string",
+              "value" : "this is something new son"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "c_array",
+            "optional" : true,
+            "comment" : "array desc",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "string",
+                "value" : null
+              },
+              "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "c_record3",
+            "optional" : true,
+            "comment" : "record ddesc",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "c_val3",
+                "optional" : true,
+                "comment" : "c value record",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crr",
+                    "optional" : true,
+                    "comment" : "crr desc",
+                    "kind" : {
+                      "type" : "string",
+                      "value" : "asdasdasd"
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "bool",
+            "optional" : false,
+            "comment" : "bool desc",
+            "kind" : {
+              "type" : "boolean",
+              "value" : true
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "double",
+            "optional" : false,
+            "comment" : "double desc",
+            "kind" : {
+              "type" : "double",
+              "value" : 234324
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "record_array",
+            "optional" : false,
+            "comment" : "sewr",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "array",
+                "optional" : false,
+                "comment" : "wer",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : [ "23" ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "array_record",
+            "optional" : false,
+            "comment" : "sdf",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "werw",
+                  "optional" : false,
+                  "kind" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "isReferenced" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "ewr",
+                  "optional" : false,
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "isReferenced" : false,
+                  "isWorkflowNodeConfiguration" : false
+                } ]
+              },
+              "value" : [ {
+                "ewr" : [ "12", "w" ],
+                "werw" : "332"
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "reformatted_columns_1",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "c_test",
+                "optional" : true,
+                "comment" : "test_str",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is something new son"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_array",
+                "optional" : false,
+                "comment" : "array desc",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_record3",
+                "optional" : false,
+                "comment" : "record ddesc",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c_val3",
+                    "optional" : false,
+                    "comment" : "c value record",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "crr",
+                        "optional" : false,
+                        "comment" : "crr desc",
+                        "kind" : {
+                          "type" : "string",
+                          "value" : "asdasdasd"
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "bool",
+                "optional" : false,
+                "comment" : "bool desc",
+                "kind" : {
+                  "type" : "boolean",
+                  "value" : true
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "double",
+                "optional" : false,
+                "comment" : "double desc",
+                "kind" : {
+                  "type" : "double",
+                  "value" : 234324
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "record_array",
+                "optional" : false,
+                "comment" : "sewr",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "array",
+                    "optional" : false,
+                    "comment" : "wer",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : [ "23" ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "array_record",
+                "optional" : false,
+                "comment" : "sdf",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "werw",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "ewr",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "ewr" : [ "12", "w" ],
+                    "werw" : "332"
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          }, {
+            "name" : "Subgraph_4",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "c_test",
+                "optional" : true,
+                "comment" : "test_str",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is something new son"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_array",
+                "optional" : false,
+                "comment" : "array desc",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_record3",
+                "optional" : false,
+                "comment" : "record ddesc",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c_val3",
+                    "optional" : false,
+                    "comment" : "c value record",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "crr",
+                        "optional" : false,
+                        "comment" : "crr desc",
+                        "kind" : {
+                          "type" : "string",
+                          "value" : "asdasdasd"
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "bool",
+                "optional" : false,
+                "comment" : "bool desc",
+                "kind" : {
+                  "type" : "boolean",
+                  "value" : true
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "double",
+                "optional" : false,
+                "comment" : "double desc",
+                "kind" : {
+                  "type" : "double",
+                  "value" : 234324
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "record_array",
+                "optional" : false,
+                "comment" : "sewr",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "array",
+                    "optional" : false,
+                    "comment" : "wer",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : [ "23" ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "array_record",
+                "optional" : false,
+                "comment" : "sdf",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "werw",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "ewr",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "ewr" : [ "12", "w" ],
+                    "werw" : "332"
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "Subgraph_5",
+                "optional" : false,
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c_test",
+                    "optional" : true,
+                    "comment" : "test_str",
+                    "kind" : {
+                      "type" : "string",
+                      "value" : "this is something new son"
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "c_array",
+                    "optional" : false,
+                    "comment" : "array desc",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir", "sdfd" ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "c_record3",
+                    "optional" : false,
+                    "comment" : "record ddesc",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "c_val3",
+                        "optional" : false,
+                        "comment" : "c value record",
+                        "kind" : {
+                          "type" : "record",
+                          "fields" : [ {
+                            "name" : "crr",
+                            "optional" : false,
+                            "comment" : "crr desc",
+                            "kind" : {
+                              "type" : "string",
+                              "value" : "asdasdasd"
+                            },
+                            "isReferenced" : false,
+                            "isWorkflowNodeConfiguration" : false
+                          } ]
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "bool",
+                    "optional" : false,
+                    "comment" : "bool desc",
+                    "kind" : {
+                      "type" : "boolean",
+                      "value" : true
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "double",
+                    "optional" : false,
+                    "comment" : "double desc",
+                    "kind" : {
+                      "type" : "double",
+                      "value" : 234324
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "record_array",
+                    "optional" : false,
+                    "comment" : "sewr",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "array",
+                        "optional" : false,
+                        "comment" : "wer",
+                        "kind" : {
+                          "type" : "array",
+                          "elementType" : {
+                            "type" : "string",
+                            "value" : null
+                          },
+                          "value" : [ "23" ]
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "array_record",
+                    "optional" : false,
+                    "comment" : "sdf",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "record",
+                        "fields" : [ {
+                          "name" : "werw",
+                          "optional" : false,
+                          "kind" : {
+                            "type" : "string",
+                            "value" : null
+                          },
+                          "isReferenced" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        }, {
+                          "name" : "ewr",
+                          "optional" : false,
+                          "kind" : {
+                            "type" : "array",
+                            "elementType" : {
+                              "type" : "string",
+                              "value" : null
+                            },
+                            "value" : null
+                          },
+                          "isReferenced" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        } ]
+                      },
+                      "value" : [ {
+                        "ewr" : [ "sdf" ],
+                        "werw" : "helo"
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : true
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          }, {
+            "name" : "Subgraph_1",
+            "optional" : false,
+            "comment" : "main hoon subgraph 1",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "c_test",
+                "optional" : true,
+                "comment" : "test_str",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is something new son"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_array",
+                "optional" : false,
+                "comment" : "array desc",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_record3",
+                "optional" : false,
+                "comment" : "record ddesc",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c_val3",
+                    "optional" : false,
+                    "comment" : "c value record",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "crr",
+                        "optional" : false,
+                        "comment" : "crr desc",
+                        "kind" : {
+                          "type" : "string",
+                          "value" : "asdasdasd"
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "bool",
+                "optional" : false,
+                "comment" : "bool desc",
+                "kind" : {
+                  "type" : "boolean",
+                  "value" : true
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "double",
+                "optional" : false,
+                "comment" : "double desc",
+                "kind" : {
+                  "type" : "double",
+                  "value" : 234324
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "record_array",
+                "optional" : false,
+                "comment" : "sewr",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "array",
+                    "optional" : false,
+                    "comment" : "wer",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : [ "23" ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "array_record",
+                "optional" : false,
+                "comment" : "sdf",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "werw",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "ewr",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "ewr" : [ "12", "w" ],
+                    "werw" : "332"
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "Subgraph_2",
+                "optional" : false,
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c_test",
+                    "optional" : true,
+                    "comment" : "test_str",
+                    "kind" : {
+                      "type" : "string",
+                      "value" : "this is something new son"
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "c_array",
+                    "optional" : false,
+                    "comment" : "array desc",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "c_record3",
+                    "optional" : false,
+                    "comment" : "record ddesc",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "c_val3",
+                        "optional" : false,
+                        "comment" : "c value record",
+                        "kind" : {
+                          "type" : "record",
+                          "fields" : [ {
+                            "name" : "crr",
+                            "optional" : false,
+                            "comment" : "crr desc",
+                            "kind" : {
+                              "type" : "string",
+                              "value" : "asdasdasd"
+                            },
+                            "isReferenced" : false,
+                            "isWorkflowNodeConfiguration" : false
+                          } ]
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "bool",
+                    "optional" : false,
+                    "comment" : "bool desc",
+                    "kind" : {
+                      "type" : "boolean",
+                      "value" : true
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "double",
+                    "optional" : false,
+                    "comment" : "double desc",
+                    "kind" : {
+                      "type" : "double",
+                      "value" : 234324
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "record_array",
+                    "optional" : false,
+                    "comment" : "sewr",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "array",
+                        "optional" : false,
+                        "comment" : "wer",
+                        "kind" : {
+                          "type" : "array",
+                          "elementType" : {
+                            "type" : "string",
+                            "value" : null
+                          },
+                          "value" : [ "23" ]
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "array_record",
+                    "optional" : false,
+                    "comment" : "sdf",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "record",
+                        "fields" : [ {
+                          "name" : "werw",
+                          "optional" : false,
+                          "kind" : {
+                            "type" : "string",
+                            "value" : null
+                          },
+                          "isReferenced" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        }, {
+                          "name" : "ewr",
+                          "optional" : false,
+                          "kind" : {
+                            "type" : "array",
+                            "elementType" : {
+                              "type" : "string",
+                              "value" : null
+                            },
+                            "value" : null
+                          },
+                          "isReferenced" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        } ]
+                      },
+                      "value" : [ {
+                        "ewr" : [ "12", "w" ],
+                        "werw" : "332"
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : true
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          }, {
+            "name" : "Subgraph_3",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "c_test",
+                "optional" : true,
+                "comment" : "test_str",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is something new son"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_array",
+                "optional" : false,
+                "comment" : "array desc",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_record3",
+                "optional" : false,
+                "comment" : "record ddesc",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c_val3",
+                    "optional" : false,
+                    "comment" : "c value record",
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "crr",
+                        "optional" : false,
+                        "comment" : "crr desc",
+                        "kind" : {
+                          "type" : "string",
+                          "value" : "asdasdasd"
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "bool",
+                "optional" : false,
+                "comment" : "bool desc",
+                "kind" : {
+                  "type" : "boolean",
+                  "value" : true
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "double",
+                "optional" : false,
+                "comment" : "double desc",
+                "kind" : {
+                  "type" : "double",
+                  "value" : 234324
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "record_array",
+                "optional" : false,
+                "comment" : "sewr",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "array",
+                    "optional" : false,
+                    "comment" : "wer",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : [ "23" ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "array_record",
+                "optional" : false,
+                "comment" : "sdf",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "werw",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "ewr",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "ewr" : [ "12", "w" ],
+                    "werw" : "332"
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          }, {
+            "name" : "c_int",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : 1
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "c_string",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "SCALA_BASIC - DEFFAULT"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "Scala_Sanity_Project" : [ "test-random3", "asdsad", "test-random2", "default", "test_all_instancevalues", "test-random11", "test-common-with-another" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        },
+        "taskId" : null,
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/SCALA_BASIC"
+        }
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ ]
+}

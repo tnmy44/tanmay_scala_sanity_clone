@@ -1,0 +1,4226 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : false
+    },
+    "id" : "1",
+    "uri" : "pipelines/DONOT_OPEN_SCALA",
+    "language" : "scala",
+    "fabricId" : "1",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "scala",
+      "udfs" : [ ],
+      "functionPackageName" : "abhishekse2etestsprophecoteam.scala_project.functions",
+      "sharedFunctionPackageNames" : [ "io.prophecy.abiscalagems.functions", "io.prophecy.scalamaskinggems.functions", "io.prophecy.scalagems.functions", "io.prophecy.warehousegems.functions" ],
+      "initialCode" : "var int_value = 10\nvar string_value = \"string value\""
+    },
+    "udafs" : {
+      "language" : "scala",
+      "code" : "package udfs\n\nimport org.apache.spark.sql.expressions._\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql._\n\n/**\n  * Here you can define your custom aggregate functions.\n  *\n  * Make sure to register your `udafs` in the register_udafs function below.\n  *\n  * Example:\n  *\n  * object GeometricMean extends UserDefinedAggregateFunction {\n  *   // This is the input fields for your aggregate function.\n  *   override def inputSchema: org.apache.spark.sql.types.StructType =\n  *     StructType(StructField(\"value\", DoubleType) :: Nil)\n  *\n  *   // This is the internal fields you keep for computing your aggregate.\n  *   override def bufferSchema: StructType = StructType(\n  *     StructField(\"count\", LongType) ::\n  *     StructField(\"product\", DoubleType) :: Nil\n  *   )\n  *\n  *   // This is the output type of your aggregatation function.\n  *   override def dataType: DataType = DoubleType\n  *\n  *   override def deterministic: Boolean = true\n  *\n  *   // This is the initial value for your buffer schema.\n  *   override def initialize(buffer: MutableAggregationBuffer): Unit = {\n  *     buffer(0) = 0L\n  *     buffer(1) = 1.0\n  *   }\n  *\n  *   // This is how to update your buffer schema given an input.\n  *   override def update(buffer: MutableAggregationBuffer, input: Row): Unit = {\n  *     buffer(0) = buffer.getAs[Long](0) + 1\n  *     buffer(1) = buffer.getAs[Double](1) * input.getAs[Double](0)\n  *   }\n  *\n  *   // This is how to merge two objects with the bufferSchema type.\n  *   override def merge(buffer1: MutableAggregationBuffer, buffer2: Row): Unit = {\n  *     buffer1(0) = buffer1.getAs[Long](0) + buffer2.getAs[Long](0)\n  *     buffer1(1) = buffer1.getAs[Double](1) * buffer2.getAs[Double](1)\n  *   }\n  *\n  *   // This is where you output the final value, given the final value of your bufferSchema.\n  *   override def evaluate(buffer: Row): Any = {\n  *     math.pow(buffer.getDouble(1), 1.toDouble / buffer.getLong(0))\n  *   }\n  * }\n  *\n  */\n\n\nobject UDAFs {\n  /**\n    * Registers UDAFs with Spark SQL\n    */\n  def registerUDAFs(spark: SparkSession): Unit = {\n    /**\n      * Example:\n      *\n      * spark.udf.register(\"gm\", GeometricMean)\n      *\n      */\n\n\n  }\n}\n"
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "JDBC_USER",
+          "kind" : {
+            "type" : "string",
+            "value" : "test_user"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "SOURCE_TABLE",
+          "kind" : {
+            "type" : "string",
+            "value" : "test_table"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "db_secrets",
+          "kind" : {
+            "type" : "databricks_secret",
+            "value" : "qasecrets_mysql:username"
+          },
+          "optional" : true,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "JDBC_URL",
+          "kind" : {
+            "type" : "string",
+            "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "JDBC_SOURCE_TABLE",
+          "kind" : {
+            "type" : "string",
+            "value" : "test_table"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_STR",
+          "kind" : {
+            "type" : "string",
+            "value" : "jdbc_url-${JDBC_URL}"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_BOOLEAN",
+          "kind" : {
+            "type" : "boolean",
+            "value" : true
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_DOUBLE",
+          "kind" : {
+            "type" : "double",
+            "value" : 123123.12321321
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_INT",
+          "kind" : {
+            "type" : "int",
+            "value" : 3243423
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_FLOAT",
+          "kind" : {
+            "type" : "float",
+            "value" : 3454.34534
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "Subgraph_1",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "c_test",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is something new son"
+              },
+              "optional" : true,
+              "comment" : "test_str",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+              },
+              "optional" : false,
+              "comment" : "array desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_record3",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_val3",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crr",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "asdasdasd"
+                      },
+                      "optional" : false,
+                      "comment" : "crr desc",
+                      "isWorkflowNodeConfiguration" : false,
+                      "isReferenced" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "c value record",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "comment" : "record ddesc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "bool",
+              "kind" : {
+                "type" : "boolean",
+                "value" : true
+              },
+              "optional" : false,
+              "comment" : "bool desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "double",
+              "kind" : {
+                "type" : "double",
+                "value" : 234324
+              },
+              "optional" : false,
+              "comment" : "double desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "record_array",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "array",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "value" : [ "23" ]
+                  },
+                  "optional" : false,
+                  "comment" : "wer",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "comment" : "sewr",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "array_record",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "werw",
+                    "kind" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false,
+                    "isReferenced" : false
+                  }, {
+                    "name" : "ewr",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false,
+                    "isReferenced" : false
+                  } ]
+                },
+                "value" : [ {
+                  "werw" : "332",
+                  "ewr" : [ "12", "w" ]
+                } ]
+              },
+              "optional" : false,
+              "comment" : "sdf",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "Subgraph_2",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_test",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "this is something new son"
+                  },
+                  "optional" : true,
+                  "comment" : "test_str",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "c_array",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+                  },
+                  "optional" : false,
+                  "comment" : "array desc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "c_record3",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "c_val3",
+                      "kind" : {
+                        "type" : "record",
+                        "fields" : [ {
+                          "name" : "crr",
+                          "kind" : {
+                            "type" : "string",
+                            "value" : "asdasdasd"
+                          },
+                          "optional" : false,
+                          "comment" : "crr desc",
+                          "isWorkflowNodeConfiguration" : false,
+                          "isReferenced" : false
+                        } ]
+                      },
+                      "optional" : false,
+                      "comment" : "c value record",
+                      "isWorkflowNodeConfiguration" : false,
+                      "isReferenced" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "record ddesc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "bool",
+                  "kind" : {
+                    "type" : "boolean",
+                    "value" : true
+                  },
+                  "optional" : false,
+                  "comment" : "bool desc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "double",
+                  "kind" : {
+                    "type" : "double",
+                    "value" : 234324
+                  },
+                  "optional" : false,
+                  "comment" : "double desc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "record_array",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "array",
+                      "kind" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "value" : [ "23" ]
+                      },
+                      "optional" : false,
+                      "comment" : "wer",
+                      "isWorkflowNodeConfiguration" : false,
+                      "isReferenced" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "sewr",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "array_record",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "werw",
+                        "kind" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false,
+                        "isReferenced" : false
+                      }, {
+                        "name" : "ewr",
+                        "kind" : {
+                          "type" : "array",
+                          "elementType" : {
+                            "type" : "string",
+                            "value" : null
+                          },
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false,
+                        "isReferenced" : false
+                      } ]
+                    },
+                    "value" : [ {
+                      "werw" : "332",
+                      "ewr" : [ "12", "w" ]
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "sdf",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : true,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true,
+          "isReferenced" : false
+        }, {
+          "name" : "Subgraph_3",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "c_test",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is something new son"
+              },
+              "optional" : true,
+              "comment" : "test_str",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+              },
+              "optional" : false,
+              "comment" : "array desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_record3",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_val3",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crr",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "asdasdasd"
+                      },
+                      "optional" : false,
+                      "comment" : "crr desc",
+                      "isWorkflowNodeConfiguration" : false,
+                      "isReferenced" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "c value record",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "comment" : "record ddesc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "bool",
+              "kind" : {
+                "type" : "boolean",
+                "value" : true
+              },
+              "optional" : false,
+              "comment" : "bool desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "double",
+              "kind" : {
+                "type" : "double",
+                "value" : 234324
+              },
+              "optional" : false,
+              "comment" : "double desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "record_array",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "array",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "value" : [ "23" ]
+                  },
+                  "optional" : false,
+                  "comment" : "wer",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "comment" : "sewr",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "array_record",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "werw",
+                    "kind" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false,
+                    "isReferenced" : false
+                  }, {
+                    "name" : "ewr",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false,
+                    "isReferenced" : false
+                  } ]
+                },
+                "value" : [ {
+                  "werw" : "332",
+                  "ewr" : [ "12", "w" ]
+                } ]
+              },
+              "optional" : false,
+              "comment" : "sdf",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true,
+          "isReferenced" : false
+        }, {
+          "name" : "Subgraph_4",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "c_test",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is something new son"
+              },
+              "optional" : true,
+              "comment" : "test_str",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+              },
+              "optional" : false,
+              "comment" : "array desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_record3",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_val3",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crr",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "asdasdasd"
+                      },
+                      "optional" : false,
+                      "comment" : "crr desc",
+                      "isWorkflowNodeConfiguration" : false,
+                      "isReferenced" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "c value record",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "comment" : "record ddesc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "bool",
+              "kind" : {
+                "type" : "boolean",
+                "value" : true
+              },
+              "optional" : false,
+              "comment" : "bool desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "double",
+              "kind" : {
+                "type" : "double",
+                "value" : 234324
+              },
+              "optional" : false,
+              "comment" : "double desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "record_array",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "array",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "value" : [ "23" ]
+                  },
+                  "optional" : false,
+                  "comment" : "wer",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "comment" : "sewr",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "array_record",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "werw",
+                    "kind" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false,
+                    "isReferenced" : false
+                  }, {
+                    "name" : "ewr",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false,
+                    "isReferenced" : false
+                  } ]
+                },
+                "value" : [ {
+                  "werw" : "332",
+                  "ewr" : [ "12", "w" ]
+                } ]
+              },
+              "optional" : false,
+              "comment" : "sdf",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "Subgraph_5",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_test",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "this is something new son"
+                  },
+                  "optional" : true,
+                  "comment" : "test_str",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "c_array",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir", "sdfd" ]
+                  },
+                  "optional" : false,
+                  "comment" : "array desc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "c_record3",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "c_val3",
+                      "kind" : {
+                        "type" : "record",
+                        "fields" : [ {
+                          "name" : "crr",
+                          "kind" : {
+                            "type" : "string",
+                            "value" : "asdasdasd"
+                          },
+                          "optional" : false,
+                          "comment" : "crr desc",
+                          "isWorkflowNodeConfiguration" : false,
+                          "isReferenced" : false
+                        } ]
+                      },
+                      "optional" : false,
+                      "comment" : "c value record",
+                      "isWorkflowNodeConfiguration" : false,
+                      "isReferenced" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "record ddesc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "bool",
+                  "kind" : {
+                    "type" : "boolean",
+                    "value" : true
+                  },
+                  "optional" : false,
+                  "comment" : "bool desc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "double",
+                  "kind" : {
+                    "type" : "double",
+                    "value" : 234324
+                  },
+                  "optional" : false,
+                  "comment" : "double desc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "record_array",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "array",
+                      "kind" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "value" : [ "23" ]
+                      },
+                      "optional" : false,
+                      "comment" : "wer",
+                      "isWorkflowNodeConfiguration" : false,
+                      "isReferenced" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "sewr",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "array_record",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "werw",
+                        "kind" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false,
+                        "isReferenced" : false
+                      }, {
+                        "name" : "ewr",
+                        "kind" : {
+                          "type" : "array",
+                          "elementType" : {
+                            "type" : "string",
+                            "value" : null
+                          },
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false,
+                        "isReferenced" : false
+                      } ]
+                    },
+                    "value" : [ {
+                      "werw" : "helo",
+                      "ewr" : [ "sdf" ]
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "sdf",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : true,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true,
+          "isReferenced" : false
+        }, {
+          "name" : "c_int",
+          "kind" : {
+            "type" : "int",
+            "value" : 45
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "c_test",
+          "kind" : {
+            "type" : "string",
+            "value" : "dasdasdsd"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ {
+      "name" : "spark_config1",
+      "value" : "spark_config1_value"
+    }, {
+      "name" : "spark_config2",
+      "value" : "spark_config2_value"
+    } ],
+    "hadoopConf" : [ {
+      "name" : "hadoop_config1",
+      "value" : "hadoop_config1_value"
+    }, {
+      "name" : "hadoop_config2",
+      "value" : "hadoop_config2_value"
+    } ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "10039",
+      "projectName" : "ProphecySparkAbinitioScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "41",
+      "projectName" : "ProphecyMaskingScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "39",
+      "projectName" : "ProphecySparkBasicsScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "40",
+      "projectName" : "ProphecyWarehouseScala",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Full",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 25
+    },
+    "topLevelPackage" : "org.main.scla_dep_mgmt",
+    "configurationVersion" : "v1"
+  },
+  "connections" : [ {
+    "id" : "Mh0R4l6POIR6giK_0RnAb",
+    "source" : "TwNShMrBLKTbLIfc-k4Av$$AT3IBjwitBQrt669MKiis",
+    "sourcePort" : "tjA55_AYFEOCIYoaums3t$$2b2FrW1EI08Hyo8ehCcZj",
+    "target" : "1l7pIm7USWNvX5X68oLOp$$putyM1Wx7f1QJRtUmp_mf",
+    "targetPort" : "6NzHeE54chn09sZ59lZz7$$_qqFIynvq2WZV9dYzONkY"
+  }, {
+    "id" : "Q8DnKTIplK72njj-YAoCQ",
+    "source" : "TwNShMrBLKTbLIfc-k4Av$$AT3IBjwitBQrt669MKiis",
+    "sourcePort" : "tjA55_AYFEOCIYoaums3t$$2b2FrW1EI08Hyo8ehCcZj",
+    "target" : "_YBvIR_iKJBi2WHBWVPl4$$HNjHrm0Bw_zrCIs43vqkv",
+    "targetPort" : "KFdamd11xloAjVY7WD4Km$$YvpzysD3xjc420IpXhAMv"
+  }, {
+    "id" : "iBHMVYktfDIAWqlvUVyfe",
+    "source" : "_YBvIR_iKJBi2WHBWVPl4$$HNjHrm0Bw_zrCIs43vqkv",
+    "sourcePort" : "U8sB8pw1QFABj2-5RFTmR$$4JcsRH4xyNR9tImR9G1na",
+    "target" : "vX4rIk1EPw4FVuZUEVH54$$9W6qWuvPr1oKhisdeXB9F",
+    "targetPort" : "PeG6UMVHCQTLTg5w7k-7A$$hFQSfcC-1vnT4tZC-xzT1"
+  }, {
+    "id" : "AMYVi6C7Xv-wVBNteaW1B",
+    "source" : "vX4rIk1EPw4FVuZUEVH54$$9W6qWuvPr1oKhisdeXB9F",
+    "sourcePort" : "mYV9_JfIywVmJC_Wq1-FC$$UxP1XWvMj6UYRQy7gvtFW",
+    "target" : "TlsyTeAQmmEmCyDjA_07K$$YD_gKdZbl4MbPgwo680iZ",
+    "targetPort" : "kvcL2ZwcaMGFi80uClHk6$$1-laJYLpEiYBdjRqTHlgN"
+  }, {
+    "id" : "UrCmz1ZH-0moHtdaTMbwD",
+    "source" : "TlsyTeAQmmEmCyDjA_07K$$YD_gKdZbl4MbPgwo680iZ",
+    "sourcePort" : "Guy98FN7qdYerBZnrfunX$$vHIp3geSSR_OqWb8OZtQd",
+    "target" : "ovLSr9MUdqvAmd55RN0Ot$$0uhRYyedpVK_ScHOsnM9n",
+    "targetPort" : "2QPh2lQYktz-r3d5t3y98$$2PmnCCYUX4fdnEAakP4Yf"
+  }, {
+    "id" : "22WnH4MLq0_DTD8syModd",
+    "source" : "ovLSr9MUdqvAmd55RN0Ot$$0uhRYyedpVK_ScHOsnM9n",
+    "sourcePort" : "PfBefgldpMW48GUCtRDec$$1YJiaY_8c2yC1pFJ782ri",
+    "target" : "uQVSVC3aMR__yXnrHO331$$Y_h6Oc0tTi8_JrZDsISkc",
+    "targetPort" : "1u_uUmBv3KU_xME0vbG7f$$N0bv3uSiirF06gT-A0Vr3"
+  }, {
+    "id" : "fSmg0kBunqvOxr6TjV8GJ",
+    "source" : "1l7pIm7USWNvX5X68oLOp$$putyM1Wx7f1QJRtUmp_mf",
+    "sourcePort" : "hiKwRqmAib-xWxVKP9oko$$jG8nL892OttFQMdWEH-HG",
+    "target" : "EYwDOxyz4R7cZIGVOvb6k$$iAKiuMtQ5fyb3KDfkXl_z",
+    "targetPort" : "mtUxdbRJNrj8kYItOZrp1$$55bgACh3M5uEQotDmdfO4"
+  }, {
+    "id" : "5uKDZZtpgvT49j_uwDa-N",
+    "source" : "EYwDOxyz4R7cZIGVOvb6k$$iAKiuMtQ5fyb3KDfkXl_z",
+    "sourcePort" : "Lr_YfzMB_CeOGrnn1aI_K$$6Do1NtJv1q2uv0Kn_ezdQ",
+    "target" : "IAkb7Sqtb2S500vMg-CLy$$HqUJaC0em2u2vCK3el27S",
+    "targetPort" : "nCauPH1o10aQsyBgHiUYy$$8l_B3ZgCxy2rKOX8sxVB7"
+  }, {
+    "id" : "70YAdnq7pQd0dROpO4YTI",
+    "source" : "TwNShMrBLKTbLIfc-k4Av$$AT3IBjwitBQrt669MKiis",
+    "sourcePort" : "tjA55_AYFEOCIYoaums3t$$2b2FrW1EI08Hyo8ehCcZj",
+    "target" : "C6H1gUTW71hJAwO4m723A$$ccQvaggR4xHPCtSFi706z",
+    "targetPort" : "05Zs-RpgIeKiJ3hGCMiSF$$ZcRrnmTMoYZuBtjuGiwOC"
+  }, {
+    "id" : "PhOoLmFqlirCk0tMITzhy",
+    "source" : "C6H1gUTW71hJAwO4m723A$$ccQvaggR4xHPCtSFi706z",
+    "sourcePort" : "xwGf5rqRxh_ryrTw2H8Fp$$eoENmiaDSVxIVFJSAZMZU",
+    "target" : "EYwDOxyz4R7cZIGVOvb6k$$iAKiuMtQ5fyb3KDfkXl_z",
+    "targetPort" : "BxuCCLTOw7zVe-Z0tLfle$$XF-c2ihHkARLgOMRSHPDS"
+  }, {
+    "id" : "SEjPCHruXRpsFHr3n7Lw7",
+    "source" : "s4ehKkFCetG2VgqVT803x$$SYJL4OsOSk9mqknMqJqwk",
+    "sourcePort" : "t7BPgmG1WirWmwJOQIfjC$$h1uOt8MGrvn9GmqDg4dDN",
+    "target" : "LQSNPE01bkpVPwrssl4S7$$syQErIm4jexUDjQbd4vms",
+    "targetPort" : "dnsnmeNPCXMrTd0QxYEXz$$1QrWPcZQAd4gtDa3jOdio"
+  }, {
+    "id" : "2Q2PgbcHPCIIan1w7DNTt",
+    "source" : "TwNShMrBLKTbLIfc-k4Av$$AT3IBjwitBQrt669MKiis",
+    "sourcePort" : "tjA55_AYFEOCIYoaums3t$$2b2FrW1EI08Hyo8ehCcZj",
+    "target" : "PnmNEwcc3h-lbfQYT_ctj$$RYRFLZOBNT0obmK6QDqU3",
+    "targetPort" : "eHK8VnDA8AMxgxUegUY6U$$9NBHTj9rep0Y0u2bYgOHl"
+  } ],
+  "processes" : {
+    "_YBvIR_iKJBi2WHBWVPl4$$HNjHrm0Bw_zrCIs43vqkv" : {
+      "id" : "_YBvIR_iKJBi2WHBWVPl4$$HNjHrm0Bw_zrCIs43vqkv",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "Subgraph_1",
+        "slug" : "Subgraph_1",
+        "x" : -1660,
+        "y" : -1520,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "KFdamd11xloAjVY7WD4Km$$YvpzysD3xjc420IpXhAMv",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "test shorty",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(20,10)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "U8sB8pw1QFABj2-5RFTmR$$4JcsRH4xyNR9tImR9G1na",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "dppRuV1z1pxGgdCotVccX",
+        "source" : "_YBvIR_iKJBi2WHBWVPl4$$HNjHrm0Bw_zrCIs43vqkv",
+        "sourcePort" : "KFdamd11xloAjVY7WD4Km$$YvpzysD3xjc420IpXhAMv",
+        "target" : "QPwFXGAT6kfrx02etGH3N$$IIyzTWJrEx_1tKkURJXHl",
+        "targetPort" : "YzJS5RmEOJMm2ekQJGme7$$-AwPhiNmNYcOBFAxCK69z"
+      }, {
+        "id" : "PJFZ8RxSTGuBHEu5XcVbF",
+        "source" : "QPwFXGAT6kfrx02etGH3N$$IIyzTWJrEx_1tKkURJXHl",
+        "sourcePort" : "eWGPLaQp4697M0XQuaHXV$$OKHeg5dlnTnJg2Xuta09C",
+        "target" : "_YBvIR_iKJBi2WHBWVPl4$$HNjHrm0Bw_zrCIs43vqkv",
+        "targetPort" : "U8sB8pw1QFABj2-5RFTmR$$4JcsRH4xyNR9tImR9G1na"
+      } ],
+      "processes" : {
+        "QPwFXGAT6kfrx02etGH3N$$IIyzTWJrEx_1tKkURJXHl" : {
+          "id" : "QPwFXGAT6kfrx02etGH3N$$IIyzTWJrEx_1tKkURJXHl",
+          "component" : "Subgraph",
+          "metadata" : {
+            "label" : "Subgraph_2",
+            "slug" : "Subgraph_2",
+            "x" : -2517.536376953125,
+            "y" : -2327.2147735595704,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "YzJS5RmEOJMm2ekQJGme7$$-AwPhiNmNYcOBFAxCK69z",
+              "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c   short  --",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "test shorty",
+                    "mappings" : [ ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "primary"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag1"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag2"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag3"
+                    }, {
+                      "type" : "user",
+                      "name" : "asdasdasd324234"
+                    } ]
+                  }
+                }, {
+                  "name" : "c-int-column type",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "-- c-long",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c-decimal",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  float",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c--boolean",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c- - -double",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c___-- string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  date",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "type" : "decimal(20,10)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "eWGPLaQp4697M0XQuaHXV$$OKHeg5dlnTnJg2Xuta09C",
+              "slug" : "out0"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : { },
+          "connections" : [ {
+            "id" : "SmuiEBXirvZRWyOJZvRC-",
+            "source" : "QPwFXGAT6kfrx02etGH3N$$IIyzTWJrEx_1tKkURJXHl",
+            "sourcePort" : "YzJS5RmEOJMm2ekQJGme7$$-AwPhiNmNYcOBFAxCK69z",
+            "target" : "jS7n56Emi4M8PQBj8HVyZ$$Zzy6ZQTizkP2ICQNUQ2cx",
+            "targetPort" : "gFgJvyFy-qI7_-DwzFiJh$$hE4ATmIgIk_CPYjEmhjFB"
+          }, {
+            "id" : "_iL2L015Mab35OTA_JvRR",
+            "source" : "jS7n56Emi4M8PQBj8HVyZ$$Zzy6ZQTizkP2ICQNUQ2cx",
+            "sourcePort" : "4KMCZUeAiruTE_WVkZEiF$$qifWdX362FLGtl0EH2f34",
+            "target" : "QPwFXGAT6kfrx02etGH3N$$IIyzTWJrEx_1tKkURJXHl",
+            "targetPort" : "eWGPLaQp4697M0XQuaHXV$$OKHeg5dlnTnJg2Xuta09C"
+          } ],
+          "processes" : {
+            "jS7n56Emi4M8PQBj8HVyZ$$Zzy6ZQTizkP2ICQNUQ2cx" : {
+              "id" : "jS7n56Emi4M8PQBj8HVyZ$$Zzy6ZQTizkP2ICQNUQ2cx",
+              "component" : "Reformat",
+              "metadata" : {
+                "label" : "Reformat_5",
+                "slug" : "Reformat_5",
+                "x" : -2617.536376953125,
+                "y" : -1467.2147735595704,
+                "phase" : 0,
+                "cache" : false,
+                "detailedStats" : false,
+                "isImported" : false
+              },
+              "ports" : {
+                "inputs" : [ {
+                  "id" : "gFgJvyFy-qI7_-DwzFiJh$$hE4ATmIgIk_CPYjEmhjFB",
+                  "slug" : "in",
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "c   short  --",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "test shorty",
+                        "mappings" : [ ],
+                        "tags" : [ {
+                          "type" : "user",
+                          "name" : "primary"
+                        }, {
+                          "type" : "user",
+                          "name" : "tag1"
+                        }, {
+                          "type" : "user",
+                          "name" : "tag2"
+                        }, {
+                          "type" : "user",
+                          "name" : "tag3"
+                        }, {
+                          "type" : "user",
+                          "name" : "asdasdasd324234"
+                        } ]
+                      }
+                    }, {
+                      "name" : "c-int-column type",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "-- c-long",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c-decimal",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c  float",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c--boolean",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c- - -double",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c___-- string",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c  date",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_timestamp",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_decimal",
+                      "type" : "decimal(20,10)",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "isStreaming" : false
+                } ],
+                "outputs" : [ {
+                  "id" : "4KMCZUeAiruTE_WVkZEiF$$qifWdX362FLGtl0EH2f34",
+                  "slug" : "out"
+                } ],
+                "selectedInputFields" : [ ],
+                "isCustomOutputSchema" : false,
+                "autoUpdateOnRun" : false
+              },
+              "properties" : {
+                "columnsSelector" : [ "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c   short  --", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c-int-column type", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##-- c-long", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c-decimal", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c  float", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c--boolean", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c- - -double", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c___-- string", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c  date", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c_timestamp" ],
+                "expressions" : [ {
+                  "target" : "c   short  --",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c   short  --`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c-int-column type",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c-int-column type`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "-- c-long",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`-- c-long`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c-decimal",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c-decimal`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c  float",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c  float`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c--boolean",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c--boolean`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c- - -double",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c- - -double`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c___-- string",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c___-- string`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c  date",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c  date`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c_timestamp",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "c_timestamp"
+                  },
+                  "description" : ""
+                } ]
+              },
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+                "projectName" : "ProphecySparkBasicsScala"
+              }
+            }
+          }
+        }
+      }
+    },
+    "TwNShMrBLKTbLIfc-k4Av$$AT3IBjwitBQrt669MKiis" : {
+      "id" : "TwNShMrBLKTbLIfc-k4Av$$AT3IBjwitBQrt669MKiis",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_parquet_all_type_and_partition_withspacehyphens1",
+        "slug" : "src_parquet_all_type_and_partition_withspacehyphens1",
+        "x" : -2160,
+        "y" : -1380,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "tjA55_AYFEOCIYoaums3t$$2b2FrW1EI08Hyo8ehCcZj",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_csv_special_char_column_name"
+      }
+    },
+    "EYwDOxyz4R7cZIGVOvb6k$$iAKiuMtQ5fyb3KDfkXl_z" : {
+      "id" : "EYwDOxyz4R7cZIGVOvb6k$$iAKiuMtQ5fyb3KDfkXl_z",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_1",
+        "slug" : "Join_1",
+        "x" : -1560,
+        "y" : -1220,
+        "phase" : 0,
+        "cache" : true,
+        "detailedStats" : false,
+        "isImported" : false,
+        "removalCondition" : "context.config.c_int > -100"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BxuCCLTOw7zVe-Z0tLfle$$XF-c2ihHkARLgOMRSHPDS",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "mtUxdbRJNrj8kYItOZrp1$$55bgACh3M5uEQotDmdfO4",
+          "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "test shorty",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(20,10)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "Lr_YfzMB_CeOGrnn1aI_K$$6Do1NtJv1q2uv0Kn_ezdQ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "(in0.`c   short  --` = in1.`c   short  --`)"
+          },
+          "joinType" : "right_outer"
+        } ],
+        "expressions" : [ {
+          "_row_id" : null,
+          "target" : "c   short  --",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.`c   short  --`"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : null,
+          "target" : "c-int-column type",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.`c-int-column type`"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : null,
+          "target" : "-- c-long",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.`-- c-long`"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : null,
+          "target" : "c-decimal",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.`c-decimal`"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : null,
+          "target" : "c  float",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.`c  float`"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : null,
+          "target" : "c--boolean",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.`c--boolean`"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : null,
+          "target" : "c- - -double",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.`c- - -double`"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : null,
+          "target" : "c___-- string",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.`c___-- string`"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : null,
+          "target" : "c  date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.`c  date`"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : null,
+          "target" : "c_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.c_timestamp"
+          },
+          "description" : ""
+        } ],
+        "hints" : [ {
+          "id" : "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd",
+          "alias" : "in0",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "jPQVC4TUYoX5nlx0LXUW0$$t4-cyDqziKmu6YnHzWMlp",
+          "alias" : "in1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd##c   short  --", "jPQVC4TUYoX5nlx0LXUW0$$t4-cyDqziKmu6YnHzWMlp##c   short  --", "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd##c   short  --", "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd##c-int-column type", "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd##-- c-long", "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd##c-decimal", "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd##c  float", "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd##c--boolean", "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd##c- - -double", "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd##c___-- string", "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd##c  date", "DVfQtj32abkWhEmrFRgke$$PJozJWE_YLNXPd08kEWVd##c_timestamp" ],
+        "whereClause" : null,
+        "headAlias" : "in0"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Join",
+        "projectName" : "ProphecySparkBasicsScala"
+      }
+    },
+    "s4ehKkFCetG2VgqVT803x$$SYJL4OsOSk9mqknMqJqwk" : {
+      "id" : "s4ehKkFCetG2VgqVT803x$$SYJL4OsOSk9mqknMqJqwk",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_parquet_all_type_and_partition_withspacehyphens1_1",
+        "slug" : "src_parquet_all_type_and_partition_withspacehyphens1_1",
+        "x" : -2020,
+        "y" : -940,
+        "phase" : -1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "removalCondition" : "context.config.c_int > -100"
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "t7BPgmG1WirWmwJOQIfjC$$h1uOt8MGrvn9GmqDg4dDN",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_csv_special_char_column_name"
+      }
+    },
+    "TlsyTeAQmmEmCyDjA_07K$$YD_gKdZbl4MbPgwo680iZ" : {
+      "id" : "TlsyTeAQmmEmCyDjA_07K$$YD_gKdZbl4MbPgwo680iZ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_7",
+        "slug" : "Reformat_7",
+        "x" : -1260,
+        "y" : -1500,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kvcL2ZwcaMGFi80uClHk6$$1-laJYLpEiYBdjRqTHlgN",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "test shorty",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "Guy98FN7qdYerBZnrfunX$$vHIp3geSSR_OqWb8OZtQd",
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
+      }
+    },
+    "PnmNEwcc3h-lbfQYT_ctj$$RYRFLZOBNT0obmK6QDqU3" : {
+      "id" : "PnmNEwcc3h-lbfQYT_ctj$$RYRFLZOBNT0obmK6QDqU3",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "DONOT_DELETE",
+        "slug" : "DONOT_DELETE",
+        "x" : -1900,
+        "y" : -1620,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "eHK8VnDA8AMxgxUegUY6U$$9NBHTj9rep0Y0u2bYgOHl",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "test shorty",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(20,10)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "mPVUV2135EIh3ssMfRpXC$$LBAsUOYfaEb4LoDPvnsa3",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "script" : "\nvar out0=in0",
+        "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame): DataFrame = {",
+        "scriptMethodFooter" : "    out0\n}"
+      }
+    },
+    "uQVSVC3aMR__yXnrHO331$$Y_h6Oc0tTi8_JrZDsISkc" : {
+      "id" : "uQVSVC3aMR__yXnrHO331$$Y_h6Oc0tTi8_JrZDsISkc",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_10",
+        "slug" : "Reformat_10",
+        "x" : -820,
+        "y" : -1460,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "1u_uUmBv3KU_xME0vbG7f$$N0bv3uSiirF06gT-A0Vr3",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "z-0xdqmEhlVsQst6Z9GJK$$_8K_oeZM4fuFb3vKNrf8Y",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
+      }
+    },
+    "vX4rIk1EPw4FVuZUEVH54$$9W6qWuvPr1oKhisdeXB9F" : {
+      "id" : "vX4rIk1EPw4FVuZUEVH54$$9W6qWuvPr1oKhisdeXB9F",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "Subgraph_3",
+        "slug" : "Subgraph_3",
+        "x" : -1420,
+        "y" : -1500,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PeG6UMVHCQTLTg5w7k-7A$$hFQSfcC-1vnT4tZC-xzT1",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "test shorty",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "mYV9_JfIywVmJC_Wq1-FC$$UxP1XWvMj6UYRQy7gvtFW",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "ZPAmfTQPQBXb2EPPhe6k9",
+        "source" : "vX4rIk1EPw4FVuZUEVH54$$9W6qWuvPr1oKhisdeXB9F",
+        "sourcePort" : "PeG6UMVHCQTLTg5w7k-7A$$hFQSfcC-1vnT4tZC-xzT1",
+        "target" : "0NAsUT48cNkA-NaQWgh8g$$jmK0y98hmPtm87ST6aZG2",
+        "targetPort" : "qYrO5asyQEM_r5PXSUuMs$$wi0xR8BcFzbS3HpgitHN8"
+      }, {
+        "id" : "xtWgfc5dxG6JZV7zJKDGb",
+        "source" : "0NAsUT48cNkA-NaQWgh8g$$jmK0y98hmPtm87ST6aZG2",
+        "sourcePort" : "y32yH0LT4LwjsKR7sxLub$$9lcS6SYU-nMRuFChZ0NvS",
+        "target" : "vX4rIk1EPw4FVuZUEVH54$$9W6qWuvPr1oKhisdeXB9F",
+        "targetPort" : "mYV9_JfIywVmJC_Wq1-FC$$UxP1XWvMj6UYRQy7gvtFW"
+      } ],
+      "processes" : {
+        "0NAsUT48cNkA-NaQWgh8g$$jmK0y98hmPtm87ST6aZG2" : {
+          "id" : "0NAsUT48cNkA-NaQWgh8g$$jmK0y98hmPtm87ST6aZG2",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_6",
+            "slug" : "Reformat_6",
+            "x" : -3897.536376953125,
+            "y" : -2527.2147735595704,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "qYrO5asyQEM_r5PXSUuMs$$wi0xR8BcFzbS3HpgitHN8",
+              "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c   short  --",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "test shorty",
+                    "mappings" : [ ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "primary"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag1"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag2"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag3"
+                    }, {
+                      "type" : "user",
+                      "name" : "asdasdasd324234"
+                    } ]
+                  }
+                }, {
+                  "name" : "c-int-column type",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "-- c-long",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c-decimal",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  float",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c--boolean",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c- - -double",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c___-- string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  date",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "y32yH0LT4LwjsKR7sxLub$$9lcS6SYU-nMRuFChZ0NvS",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ ],
+            "expressions" : [ ]
+          },
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+            "projectName" : "ProphecySparkBasicsScala"
+          }
+        }
+      }
+    },
+    "LQSNPE01bkpVPwrssl4S7$$syQErIm4jexUDjQbd4vms" : {
+      "id" : "LQSNPE01bkpVPwrssl4S7$$syQErIm4jexUDjQbd4vms",
+      "component" : "Lookup",
+      "metadata" : {
+        "label" : "Lookup_1",
+        "slug" : "Lookup_1",
+        "x" : -1600,
+        "y" : -920,
+        "phase" : -1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "dnsnmeNPCXMrTd0QxYEXz$$1QrWPcZQAd4gtDa3jOdio",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "test shorty",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(20,10)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "isRange" : false,
+        "processName" : "TestLookup",
+        "keyColumns" : [ "c   short  --", "c-int-column type" ],
+        "valueColumns" : [ "c  float", "c--boolean" ]
+      }
+    },
+    "C6H1gUTW71hJAwO4m723A$$ccQvaggR4xHPCtSFi706z" : {
+      "id" : "C6H1gUTW71hJAwO4m723A$$ccQvaggR4xHPCtSFi706z",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : -1820,
+        "y" : -1320,
+        "phase" : 0,
+        "cache" : true,
+        "detailedStats" : false,
+        "isImported" : false,
+        "passThrough" : "context.config.c_int > -100",
+        "removalCondition" : "context.config.c_int > -100"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "05Zs-RpgIeKiJ3hGCMiSF$$ZcRrnmTMoYZuBtjuGiwOC",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "test shorty",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(20,10)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "xwGf5rqRxh_ryrTw2H8Fp$$eoENmiaDSVxIVFJSAZMZU",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "script" : "print(s\"Config: ${Config.c_test}\")\n\nConsole.print(\"out stream\")\nConsole.err.println(\"err stream\")\n\nSystem.out.print(\"out stream\")\nSystem.err.print(\"err stream\")\n\nvar out0=in0",
+        "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame): DataFrame = {",
+        "scriptMethodFooter" : "    out0\n}"
+      }
+    },
+    "ovLSr9MUdqvAmd55RN0Ot$$0uhRYyedpVK_ScHOsnM9n" : {
+      "id" : "ovLSr9MUdqvAmd55RN0Ot$$0uhRYyedpVK_ScHOsnM9n",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "Subgraph_4",
+        "slug" : "Subgraph_4",
+        "x" : -1080,
+        "y" : -1480,
+        "phase" : 0,
+        "cache" : true,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2QPh2lQYktz-r3d5t3y98$$2PmnCCYUX4fdnEAakP4Yf",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "PfBefgldpMW48GUCtRDec$$1YJiaY_8c2yC1pFJ782ri",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "u2w9rWVVuRiZPVmOFY4fO",
+        "source" : "ovLSr9MUdqvAmd55RN0Ot$$0uhRYyedpVK_ScHOsnM9n",
+        "sourcePort" : "2QPh2lQYktz-r3d5t3y98$$2PmnCCYUX4fdnEAakP4Yf",
+        "target" : "729YXwmP8iiOGjmR9sQ8y$$_74ym9wSlPdG03pJK2UU0",
+        "targetPort" : "I3ELXktYO_-4mdgszktjv$$ANnezETgQYIppw0dR9GbG"
+      }, {
+        "id" : "LyDQAvfzrOlFr9VEzQHSP",
+        "source" : "729YXwmP8iiOGjmR9sQ8y$$_74ym9wSlPdG03pJK2UU0",
+        "sourcePort" : "K9GpDkZRCJq58A4PNSywp$$r5iE3Pp5E3oGgCcSBZRLL",
+        "target" : "LYjHJbifBjmPnu6koT9gU$$FlqyI99Sdu_XPY7Q-UIZX",
+        "targetPort" : "s2Sh74ISXERfHiDlpVFMI$$AOoUIQV_adV62wk2Rd6nN"
+      }, {
+        "id" : "YxNq9b5edDXcwp_GoSaks",
+        "source" : "LYjHJbifBjmPnu6koT9gU$$FlqyI99Sdu_XPY7Q-UIZX",
+        "sourcePort" : "84AIgh1Hs-hIuSZaii_yS$$IslQc0DIfkRO_hajmI7Yk",
+        "target" : "ovLSr9MUdqvAmd55RN0Ot$$0uhRYyedpVK_ScHOsnM9n",
+        "targetPort" : "PfBefgldpMW48GUCtRDec$$1YJiaY_8c2yC1pFJ782ri"
+      } ],
+      "processes" : {
+        "LYjHJbifBjmPnu6koT9gU$$FlqyI99Sdu_XPY7Q-UIZX" : {
+          "id" : "LYjHJbifBjmPnu6koT9gU$$FlqyI99Sdu_XPY7Q-UIZX",
+          "component" : "Subgraph",
+          "metadata" : {
+            "label" : "Subgraph_5",
+            "slug" : "Subgraph_5",
+            "x" : -1477.536376953125,
+            "y" : -1347.2147735595704,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "s2Sh74ISXERfHiDlpVFMI$$AOoUIQV_adV62wk2Rd6nN",
+              "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c   short  --",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c-int-column type",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "-- c-long",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c-decimal",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  float",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c--boolean",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c- - -double",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c___-- string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  date",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "84AIgh1Hs-hIuSZaii_yS$$IslQc0DIfkRO_hajmI7Yk",
+              "slug" : "out0"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : { },
+          "connections" : [ {
+            "id" : "cldWdAnDWyrzaoQq0fXnP",
+            "source" : "LYjHJbifBjmPnu6koT9gU$$FlqyI99Sdu_XPY7Q-UIZX",
+            "sourcePort" : "s2Sh74ISXERfHiDlpVFMI$$AOoUIQV_adV62wk2Rd6nN",
+            "target" : "9UkCso7M03ndDIRhfqoPw$$9PVsHaKeyCA37pAMfd2gY",
+            "targetPort" : "dJYl_TZV3Ja3tC9zPjf1O$$sI6yqNVBYX_8Ow9rTP3Df"
+          }, {
+            "id" : "hJ6LI5FeS3QT-t3o2WVba",
+            "source" : "9UkCso7M03ndDIRhfqoPw$$9PVsHaKeyCA37pAMfd2gY",
+            "sourcePort" : "RkKP6WsjNv_GB-jCKj5oF$$mYof6mN_pUrlFf8CLR2bH",
+            "target" : "LYjHJbifBjmPnu6koT9gU$$FlqyI99Sdu_XPY7Q-UIZX",
+            "targetPort" : "84AIgh1Hs-hIuSZaii_yS$$IslQc0DIfkRO_hajmI7Yk"
+          } ],
+          "processes" : {
+            "9UkCso7M03ndDIRhfqoPw$$9PVsHaKeyCA37pAMfd2gY" : {
+              "id" : "9UkCso7M03ndDIRhfqoPw$$9PVsHaKeyCA37pAMfd2gY",
+              "component" : "Reformat",
+              "metadata" : {
+                "label" : "Reformat_9",
+                "slug" : "Reformat_9",
+                "x" : -1637.536376953125,
+                "y" : -1327.2147735595704,
+                "phase" : 0,
+                "cache" : false,
+                "detailedStats" : false,
+                "isImported" : false
+              },
+              "ports" : {
+                "inputs" : [ {
+                  "id" : "dJYl_TZV3Ja3tC9zPjf1O$$sI6yqNVBYX_8Ow9rTP3Df",
+                  "slug" : "in",
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "c   short  --",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c-int-column type",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "-- c-long",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c-decimal",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c  float",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c--boolean",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c- - -double",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c___-- string",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c  date",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_timestamp",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "isStreaming" : false
+                } ],
+                "outputs" : [ {
+                  "id" : "RkKP6WsjNv_GB-jCKj5oF$$mYof6mN_pUrlFf8CLR2bH",
+                  "slug" : "out"
+                } ],
+                "selectedInputFields" : [ ],
+                "isCustomOutputSchema" : false,
+                "autoUpdateOnRun" : false
+              },
+              "properties" : {
+                "columnsSelector" : [ ],
+                "expressions" : [ ]
+              },
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+                "projectName" : "ProphecySparkBasicsScala"
+              }
+            }
+          }
+        },
+        "729YXwmP8iiOGjmR9sQ8y$$_74ym9wSlPdG03pJK2UU0" : {
+          "id" : "729YXwmP8iiOGjmR9sQ8y$$_74ym9wSlPdG03pJK2UU0",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_8",
+            "slug" : "Reformat_8",
+            "x" : -1817.536376953125,
+            "y" : -1367.2147735595704,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "I3ELXktYO_-4mdgszktjv$$ANnezETgQYIppw0dR9GbG",
+              "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c   short  --",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c-int-column type",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "-- c-long",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c-decimal",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  float",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c--boolean",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c- - -double",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c___-- string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  date",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "K9GpDkZRCJq58A4PNSywp$$r5iE3Pp5E3oGgCcSBZRLL",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ ],
+            "expressions" : [ ]
+          },
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+            "projectName" : "ProphecySparkBasicsScala"
+          }
+        }
+      }
+    },
+    "IAkb7Sqtb2S500vMg-CLy$$HqUJaC0em2u2vCK3el27S" : {
+      "id" : "IAkb7Sqtb2S500vMg-CLy$$HqUJaC0em2u2vCK3el27S",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_4",
+        "slug" : "Reformat_4",
+        "x" : -1340,
+        "y" : -1200,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "nCauPH1o10aQsyBgHiUYy$$8l_B3ZgCxy2rKOX8sxVB7",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "U_N7JtdCQh8kc8WEW0qgx$$EANyIm_Bg5pKk9jGmIp7A",
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_expression_contains_startswith",
+              "type" : "boolean",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_expression_contains_startswith_1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "VpPnjyIjBMqfiRzPEDEob$$YgRsqzo6pwML8j2WTleC6##c   short  --", "VpPnjyIjBMqfiRzPEDEob$$YgRsqzo6pwML8j2WTleC6##c-int-column type", "VpPnjyIjBMqfiRzPEDEob$$YgRsqzo6pwML8j2WTleC6##-- c-long", "VpPnjyIjBMqfiRzPEDEob$$YgRsqzo6pwML8j2WTleC6##c-decimal", "VpPnjyIjBMqfiRzPEDEob$$YgRsqzo6pwML8j2WTleC6##c  float", "VpPnjyIjBMqfiRzPEDEob$$YgRsqzo6pwML8j2WTleC6##c--boolean", "VpPnjyIjBMqfiRzPEDEob$$YgRsqzo6pwML8j2WTleC6##c- - -double", "VpPnjyIjBMqfiRzPEDEob$$YgRsqzo6pwML8j2WTleC6##c___-- string", "VpPnjyIjBMqfiRzPEDEob$$YgRsqzo6pwML8j2WTleC6##c  date", "VpPnjyIjBMqfiRzPEDEob$$YgRsqzo6pwML8j2WTleC6##c_timestamp" ],
+        "expressions" : [ {
+          "target" : "c   short  --",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c   short  --`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c-int-column type",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c-int-column type`"
+          },
+          "description" : ""
+        }, {
+          "target" : "-- c-long",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`-- c-long`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c-decimal",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c-decimal`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c  float",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c  float`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c--boolean",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c--boolean`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c- - -double",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c- - -double`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c___-- string",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c___-- string`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c  date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c  date`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_timestamp"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_expression_contains_startswith",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "((endsWith('SparkSQL', 'sql') OR startsWith('SparkSQL', 'spark')) OR contains('Hello World', 'hello'))"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_expression_contains_startswith_1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c  date`"
+          },
+          "description" : ""
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
+      }
+    },
+    "1l7pIm7USWNvX5X68oLOp$$putyM1Wx7f1QJRtUmp_mf" : {
+      "id" : "1l7pIm7USWNvX5X68oLOp$$putyM1Wx7f1QJRtUmp_mf",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_1",
+        "slug" : "SchemaTransform_1",
+        "x" : -1800,
+        "y" : -1140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "6NzHeE54chn09sZ59lZz7$$_qqFIynvq2WZV9dYzONkY",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "test shorty",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(20,10)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "hiKwRqmAib-xWxVKP9oko$$jG8nL892OttFQMdWEH-HG",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "transformations" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/SchemaTransform",
+        "projectName" : "ProphecySparkBasicsScala"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.PnmNEwcc3h-lbfQYT_ctj$$RYRFLZOBNT0obmK6QDqU3.ports.outputs",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 3,
+    "message" : "Please infer output schema from the cluster as described [here](https://docs.prophecy.io/low-code-spark/gems/custom/script/)",
+    "tags" : [ ],
+    "relatedInformation" : [ ],
+    "diagnosticType" : 2
+  } ]
+}

@@ -1,0 +1,18 @@
+package org.main.scla_dep_mgmt_change.graph.subgraph25Ports.config
+
+import org.apache.spark.sql._
+import io.prophecy.libs._
+import pureconfig._
+import pureconfig.generic.ProductHint
+import org.apache.spark.sql.SparkSession
+
+object Config {
+
+  implicit val confHint: ProductHint[Config] =
+    ProductHint[Config](ConfigFieldMapping(CamelCase, CamelCase))
+
+  implicit val interimOutput: InterimOutput = InterimOutputHive2("")
+}
+
+case class Config() extends ConfigBase
+case class Context(spark: SparkSession, config: Config)

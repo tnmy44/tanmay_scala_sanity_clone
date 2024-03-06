@@ -1,0 +1,50 @@
+version: 1
+configurations:
+- test-instance2
+- test-instance3
+- newfabric
+- ebs_ssd
+- dev_11rt
+- dev1
+- dev
+- test-instance1
+- default
+- captain_livy
+dependencies:
+- type: workflow
+  id: '59965868'
+  name: mysql
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: '1575366423'
+  name: cats
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: WsJw2
+  name: mllib
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: uK21Xn3lreGQIkifqEWcI
+  name: org.mongodb.spark:mongo-spark-connector_2.12:10.2.0
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: AUatpIdXcFRtneUplIeAv
+  name: org.mongodb:mongodb-driver:3.12.14
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: DZeetQ6b4scYIpQ1jatS6
+  name: com.amazon.redshift:redshift-jdbc42:2.1.0.10
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: BwbAPST2niiFTk4TBKrzq
+  name: com.crealytics:spark-excel_2.12:3.4.1_0.19.0
+  enabled: true
+  entity: Pipeline
+pipelineVersion:
+  version: '2'

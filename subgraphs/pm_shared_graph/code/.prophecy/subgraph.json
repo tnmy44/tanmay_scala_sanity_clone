@@ -1,0 +1,1175 @@
+{
+  "id" : "qJ4cQD5wbI0dTbuuL0V-T",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "Subgraph_1",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "var2",
+              "kind" : {
+                "type" : "float",
+                "value" : 2.1
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "JDBC_DATABASE",
+              "kind" : {
+                "type" : "string",
+                "value" : "test_database"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true,
+          "isReferenced" : false
+        }, {
+          "name" : "var1",
+          "kind" : {
+            "type" : "int",
+            "value" : 20
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "JDBC_DATABASE",
+          "kind" : {
+            "type" : "string",
+            "value" : "test_database"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CSV_DATASET_LOCATION",
+          "kind" : {
+            "type" : "string",
+            "value" : "dbfs:/Prophecy/qa_data/csv/CustomersDatasetInputWithHeader.csv"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      }
+    },
+    "passThrough" : "context.config.c_array_complex(0).car_record.carr_short < -10"
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "okLRmCUgOCIlvGVI8L4Ig",
+      "slug" : "in0",
+      "isStreaming" : false
+    } ],
+    "outputs" : [ {
+      "id" : "whfVBqQnJEAm4p6Oh_RDi",
+      "slug" : "out0",
+      "isStreaming" : false
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "properties" : {
+    "packageName" : "pkgscala"
+  },
+  "connections" : [ {
+    "id" : "j9dK97P6VsHrWgWHi1oPa",
+    "source" : "qJ4cQD5wbI0dTbuuL0V-T",
+    "sourcePort" : "okLRmCUgOCIlvGVI8L4Ig",
+    "target" : "Ly2IBGE1CPgoC51992Ii-",
+    "targetPort" : "tqkqxGfF-z674tNuf9UF_"
+  }, {
+    "id" : "2UMqSzpXuJQ-hPLc4DLyc",
+    "source" : "Ly2IBGE1CPgoC51992Ii-",
+    "sourcePort" : "dbBBb_rXY6Y3Tjj_5R8FF",
+    "target" : "lr18wchRAuN40Moyi6p1a",
+    "targetPort" : "tCM6WEgvNCSZgeZmSky8U"
+  }, {
+    "id" : "pLmKU_W-dkmKSmNN6vZnf",
+    "source" : "lr18wchRAuN40Moyi6p1a",
+    "sourcePort" : "QB1foN13skAtZSzbJiVTH",
+    "target" : "qJ4cQD5wbI0dTbuuL0V-T",
+    "targetPort" : "whfVBqQnJEAm4p6Oh_RDi"
+  }, {
+    "id" : "FfTO8P38WoOZM5cvEqosv",
+    "source" : "b_tmfs0tn5u9bRng8QvCE",
+    "sourcePort" : "eHsLmFcs3EuVXkhPq8r_c",
+    "target" : "8aE4-919ghq1tub5nQWe4",
+    "targetPort" : "FQSUAj8k1RLvUwWZylWEC"
+  }, {
+    "id" : "OzT4EozQsHVtaSKmLjnhC",
+    "source" : "Ly2IBGE1CPgoC51992Ii-",
+    "sourcePort" : "dbBBb_rXY6Y3Tjj_5R8FF",
+    "target" : "8L5gE9UXhEUzs_g4yxjeX",
+    "targetPort" : "UPruaZXnSCvB5MEsowfkU"
+  } ],
+  "processes" : {
+    "lr18wchRAuN40Moyi6p1a" : {
+      "id" : "lr18wchRAuN40Moyi6p1a",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "Subgraph_1",
+        "slug" : "Subgraph_1",
+        "x" : 180,
+        "y" : 40,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tCM6WEgvNCSZgeZmSky8U",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "QB1foN13skAtZSzbJiVTH",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "CpOjbpAudSjjcQnHCc2oo",
+        "source" : "lr18wchRAuN40Moyi6p1a",
+        "sourcePort" : "tCM6WEgvNCSZgeZmSky8U",
+        "target" : "scquc15pv5AvPVXgGyWJy",
+        "targetPort" : "BhdCWsXBkt77kMbkWy6Eg"
+      }, {
+        "id" : "Jx3fCQIm_yT59b-dLLtg4",
+        "source" : "scquc15pv5AvPVXgGyWJy",
+        "sourcePort" : "QMcIIElLXTnydERZY6sjL",
+        "target" : "lr18wchRAuN40Moyi6p1a",
+        "targetPort" : "QB1foN13skAtZSzbJiVTH"
+      }, {
+        "id" : "w_qz0552hYpq003kbHa2T",
+        "source" : "cnrKWOKwwC66GPLulpCtd",
+        "sourcePort" : "RvlDTPa7u3AoLkfpKXuND",
+        "target" : "OH-JtFodOZE1E3mDeXyH3",
+        "targetPort" : "4K6oQnUnRHnnrmig4x3jH"
+      } ],
+      "processes" : {
+        "scquc15pv5AvPVXgGyWJy" : {
+          "id" : "scquc15pv5AvPVXgGyWJy",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_11",
+            "slug" : "Reformat_11",
+            "x" : -440,
+            "y" : -20,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "BhdCWsXBkt77kMbkWy6Eg",
+              "slug" : "in"
+            } ],
+            "outputs" : [ {
+              "id" : "QMcIIElLXTnydERZY6sjL",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ ],
+            "expressions" : [ {
+              "_row_id" : "497771193",
+              "target" : "c_int",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "udf_add_one('$var2')"
+              },
+              "description" : ""
+            } ]
+          },
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.2"
+          }
+        },
+        "cnrKWOKwwC66GPLulpCtd" : {
+          "id" : "cnrKWOKwwC66GPLulpCtd",
+          "component" : "Source",
+          "metadata" : {
+            "label" : "src_jdbc_mix_creds_1",
+            "slug" : "src_jdbc_mix_creds_1",
+            "x" : -660,
+            "y" : 140,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ ],
+            "outputs" : [ {
+              "id" : "RvlDTPa7u3AoLkfpKXuND",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "format" : "jdbc",
+            "refreshDataset" : false,
+            "datasetTypes" : [ {
+              "label" : "File",
+              "value" : "File",
+              "icon" : "File"
+            }, {
+              "label" : "Warehouse",
+              "value" : "Warehouse",
+              "icon" : "Database"
+            }, {
+              "label" : "Catalog Table",
+              "value" : "Database",
+              "icon" : "CatalogTable"
+            } ],
+            "dataFormats" : [ {
+              "icon" : "FileIcon",
+              "label" : "Customcsvsource",
+              "componentInfo" : {
+                "gemId" : "gems/CustomCSVSource",
+                "projectId" : "49",
+                "projectName" : "Scala_Sanity_Project"
+              },
+              "type" : "File",
+              "value" : "CustomCSVSource"
+            }, {
+              "icon" : "TableSolidIcon",
+              "label" : "Customcatalogtable",
+              "componentInfo" : {
+                "gemId" : "gems/CustomCatalogTable",
+                "projectId" : "49",
+                "projectName" : "Scala_Sanity_Project"
+              },
+              "type" : "Database",
+              "value" : "CustomCatalogTable"
+            }, {
+              "icon" : "FileIcon",
+              "label" : "Depcsv",
+              "componentInfo" : {
+                "gemId" : "gems/DepCSV",
+                "projectId" : "49",
+                "projectName" : "Scala_Sanity_Project"
+              },
+              "type" : "File",
+              "value" : "DepCSV"
+            }, {
+              "icon" : "FileIcon",
+              "label" : "Createdata",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/a4NwFTJd_project_10039.git&subPath=&tag=0.0.16&projectSubscriptionProjectId=10039&path=gems/CreateData",
+                "projectId" : "10039",
+                "projectName" : "ProphecySparkAbinitioScala",
+                "version" : "0.0.16"
+              },
+              "type" : "File",
+              "value" : "CreateData"
+            }, {
+              "icon" : "FileIcon",
+              "label" : "Mtime",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/a4NwFTJd_project_10039.git&subPath=&tag=0.0.16&projectSubscriptionProjectId=10039&path=gems/MTime",
+                "projectId" : "10039",
+                "projectName" : "ProphecySparkAbinitioScala",
+                "version" : "0.0.16"
+              },
+              "type" : "File",
+              "value" : "MTime"
+            }, {
+              "icon" : "CsvIcon",
+              "label" : "CSV",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/csv",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "csv"
+            }, {
+              "icon" : "AvroLogoIcon",
+              "label" : "Avro",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/avro",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "avro"
+            }, {
+              "icon" : "JsonIcon",
+              "label" : "JSON",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/json",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "json"
+            }, {
+              "icon" : "ParquetLogoIcon",
+              "label" : "Parquet",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/parquet",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "parquet"
+            }, {
+              "icon" : "FileTextIcon",
+              "label" : "Text",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/text",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "text"
+            }, {
+              "icon" : "OrcLogoIcon",
+              "label" : "ORC",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/orc",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "orc"
+            }, {
+              "icon" : "CatalogTableIcon",
+              "label" : "Catalog Table",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/catalogTable",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "Database",
+              "value" : "catalogTable"
+            }, {
+              "icon" : "DeltaLogoIcon",
+              "label" : "Delta",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/delta",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "delta"
+            }, {
+              "icon" : "FileIcon",
+              "label" : "Xlsx",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/xlsx",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "xlsx"
+            }, {
+              "icon" : "XmlIcon",
+              "label" : "Xml",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/xml",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "xml"
+            }, {
+              "icon" : "FixedFormatFileIcon",
+              "label" : "Fixed Format",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/fixedformat",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "fixedformat"
+            }, {
+              "icon" : "FtpIcon",
+              "label" : "Ftp",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/FTP",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "FTP"
+            }, {
+              "icon" : "JdbcFileIcon",
+              "label" : "JDBC",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/jdbc",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "Warehouse",
+              "value" : "jdbc"
+            }, {
+              "icon" : "FileIcon",
+              "label" : "Jdbc_query",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.0&projectSubscriptionProjectId=39&path=gems/JDBC_QUERY",
+                "projectId" : "39",
+                "projectName" : "ProphecySparkBasicsScala",
+                "version" : "0.1.0"
+              },
+              "type" : "File",
+              "value" : "JDBC_QUERY"
+            }, {
+              "icon" : "MongoDbIcon",
+              "label" : "Mongodb",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_40.git&subPath=&tag=0.0.3&projectSubscriptionProjectId=40&path=gems/mongodb",
+                "projectId" : "40",
+                "projectName" : "ProphecyWarehouseScala",
+                "version" : "0.0.3"
+              },
+              "type" : "Warehouse",
+              "value" : "mongodb"
+            }, {
+              "icon" : "RedshiftNewIcon",
+              "label" : "Redshift",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_40.git&subPath=&tag=0.0.3&projectSubscriptionProjectId=40&path=gems/redshift",
+                "projectId" : "40",
+                "projectName" : "ProphecyWarehouseScala",
+                "version" : "0.0.3"
+              },
+              "type" : "Warehouse",
+              "value" : "redshift"
+            }, {
+              "icon" : "SnowflakeLogoIcon",
+              "label" : "Snowflake",
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_40.git&subPath=&tag=0.0.3&projectSubscriptionProjectId=40&path=gems/snowflake",
+                "projectId" : "40",
+                "projectName" : "ProphecyWarehouseScala",
+                "version" : "0.0.3"
+              },
+              "type" : "Warehouse",
+              "value" : "snowflake"
+            } ],
+            "datasetId" : "datasets/src_jdbc_mix_creds",
+            "dataTypes" : [ {
+              "label" : "File",
+              "value" : "File",
+              "icon" : "File"
+            }, {
+              "label" : "Warehouse",
+              "value" : "Warehouse",
+              "icon" : "Database"
+            }, {
+              "label" : "Catalog Table",
+              "value" : "Database",
+              "icon" : "CatalogTable"
+            }, {
+              "label" : "Applications",
+              "value" : "WebApp",
+              "icon" : "WebApp"
+            } ],
+            "updated" : true,
+            "currentDatasetId" : "datasets/src_jdbc_mix_creds",
+            "componentInfo" : {
+              "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/jdbc",
+              "projectId" : "39",
+              "projectName" : "ProphecySparkBasicsScala",
+              "version" : "0.1.2"
+            },
+            "dataset" : {
+              "textPassword" : null,
+              "refreshKrb5Config" : null,
+              "keytab" : null,
+              "cascadeTruncate" : null,
+              "secretPassword" : [ {
+                "type" : "vaultSecret",
+                "value" : {
+                  "providerId" : "905",
+                  "secretScope" : "secrets/qa",
+                  "providerType" : "HashiCorp",
+                  "providerName" : "HashiCorp",
+                  "secretKey" : "mysql_password"
+                }
+              } ],
+              "lowerBound" : null,
+              "writeMode" : null,
+              "description" : "",
+              "preSQL" : null,
+              "customSchema" : null,
+              "postSQL" : null,
+              "partitionColumn" : null,
+              "pushDownPredicate" : true,
+              "truncate" : null,
+              "batchsize" : null,
+              "query" : "select * from test_table_automation",
+              "sessionInitStatement" : null,
+              "isolationLevel" : null,
+              "readFromSource" : "sqlQuery",
+              "credentialScope" : null,
+              "secretUsername" : [ {
+                "type" : "vaultSecret",
+                "value" : {
+                  "providerId" : "342",
+                  "secretScope" : "qasecrets",
+                  "providerType" : "Databricks",
+                  "providerName" : "Databricks",
+                  "secretKey" : "mysql_user"
+                }
+              } ],
+              "upperBound" : null,
+              "pushDownAggregate" : null,
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "a",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "driver" : "com.mysql.jdbc.Driver",
+              "createTableColumnTypes" : null,
+              "jdbcUrl" : "",
+              "fetchsize" : null,
+              "dbtable" : null,
+              "principal" : null,
+              "textUsername" : null,
+              "createTableOptions" : null,
+              "secretJdbcUrl" : [ {
+                "type" : "literal",
+                "value" : "jdbc:mysql://"
+              }, {
+                "type" : "vaultSecret",
+                "value" : {
+                  "providerId" : "905",
+                  "secretScope" : "secrets/qa",
+                  "providerType" : "HashiCorp",
+                  "providerName" : "HashiCorp",
+                  "secretKey" : "mysql_host"
+                }
+              }, {
+                "type" : "literal",
+                "value" : ":"
+              }, {
+                "type" : "vaultSecret",
+                "value" : {
+                  "providerId" : "342",
+                  "secretScope" : "qasecrets",
+                  "providerType" : "Databricks",
+                  "providerName" : "Databricks",
+                  "secretKey" : "mysql_port"
+                }
+              }, {
+                "type" : "literal",
+                "value" : "/"
+              }, {
+                "type" : "pipelineConfiguration",
+                "value" : [ "JDBC_DATABASE" ]
+              } ],
+              "queryTimeout" : null,
+              "numPartitions" : null,
+              "credType" : "databricksSecrets"
+            },
+            "isNewDataset" : false,
+            "disabled" : false,
+            "datasetType" : "Warehouse"
+          }
+        },
+        "OH-JtFodOZE1E3mDeXyH3" : {
+          "id" : "OH-JtFodOZE1E3mDeXyH3",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_1_1",
+            "slug" : "Reformat_1_1",
+            "x" : -380,
+            "y" : 180,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "4K6oQnUnRHnnrmig4x3jH",
+              "slug" : "in"
+            } ],
+            "outputs" : [ {
+              "id" : "Yk6FoGmfY7yVEjniYgmgQ",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ ],
+            "expressions" : [ ]
+          },
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.2"
+          }
+        }
+      }
+    },
+    "8aE4-919ghq1tub5nQWe4" : {
+      "id" : "8aE4-919ghq1tub5nQWe4",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : -60,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "FQSUAj8k1RLvUwWZylWEC",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "wB7vEfCgX1ASlEvu3VlCY",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "8L5gE9UXhEUzs_g4yxjeX" : {
+      "id" : "8L5gE9UXhEUzs_g4yxjeX",
+      "component" : "DepDedupTrimmed",
+      "metadata" : {
+        "label" : "deduplicate_by_first_name",
+        "slug" : "deduplicate_by_first_name",
+        "x" : 60,
+        "y" : 140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UPruaZXnSCvB5MEsowfkU",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "AyTL07DfqJajDcjV3MWxS",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "colName" : "c_int"
+        } ],
+        "dedupType" : "any",
+        "columnsSelector" : [ "UPruaZXnSCvB5MEsowfkU$$BEI5F8GOH9r68I7jBpbS8$$VgwEpAf-18AWbjGZb4Hfg##c_int" ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "componentInfo" : {
+        "gemId" : "gems/DepDedupTrimmed",
+        "projectId" : "49",
+        "projectName" : "Scala_Sanity_Project"
+      }
+    },
+    "b_tmfs0tn5u9bRng8QvCE" : {
+      "id" : "b_tmfs0tn5u9bRng8QvCE",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_config_csv",
+        "slug" : "src_config_csv",
+        "x" : -240,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "eHsLmFcs3EuVXkhPq8r_c",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "format" : "csv",
+        "refreshDataset" : false,
+        "dataFormats" : [ {
+          "icon" : "FileIcon",
+          "label" : "Customcsvsource",
+          "componentInfo" : {
+            "gemId" : "gems/CustomCSVSource",
+            "projectId" : "49",
+            "projectName" : "Scala_Sanity_Project"
+          },
+          "type" : "File",
+          "value" : "CustomCSVSource"
+        }, {
+          "icon" : "TableSolidIcon",
+          "label" : "Customcatalogtable",
+          "componentInfo" : {
+            "gemId" : "gems/CustomCatalogTable",
+            "projectId" : "49",
+            "projectName" : "Scala_Sanity_Project"
+          },
+          "type" : "Database",
+          "value" : "CustomCatalogTable"
+        }, {
+          "icon" : "FileIcon",
+          "label" : "Depcsv",
+          "componentInfo" : {
+            "gemId" : "gems/DepCSV",
+            "projectId" : "49",
+            "projectName" : "Scala_Sanity_Project"
+          },
+          "type" : "File",
+          "value" : "DepCSV"
+        }, {
+          "icon" : "FileIcon",
+          "label" : "Createdata",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/a4NwFTJd_project_10039.git&subPath=&tag=0.0.17&projectSubscriptionProjectId=10039&path=gems/CreateData",
+            "projectId" : "10039",
+            "projectName" : "ProphecySparkAbinitioScala",
+            "version" : "0.0.17"
+          },
+          "type" : "File",
+          "value" : "CreateData"
+        }, {
+          "icon" : "FileIcon",
+          "label" : "Mtime",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/a4NwFTJd_project_10039.git&subPath=&tag=0.0.17&projectSubscriptionProjectId=10039&path=gems/MTime",
+            "projectId" : "10039",
+            "projectName" : "ProphecySparkAbinitioScala",
+            "version" : "0.0.17"
+          },
+          "type" : "File",
+          "value" : "MTime"
+        }, {
+          "icon" : "CsvIcon",
+          "label" : "CSV",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/csv",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "csv"
+        }, {
+          "icon" : "AvroLogoIcon",
+          "label" : "Avro",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/avro",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "avro"
+        }, {
+          "icon" : "JsonIcon",
+          "label" : "JSON",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/json",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "json"
+        }, {
+          "icon" : "ParquetLogoIcon",
+          "label" : "Parquet",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/parquet",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "parquet"
+        }, {
+          "icon" : "FileTextIcon",
+          "label" : "Text",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/text",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "text"
+        }, {
+          "icon" : "OrcLogoIcon",
+          "label" : "ORC",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/orc",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "orc"
+        }, {
+          "icon" : "CatalogTableIcon",
+          "label" : "Catalog Table",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/catalogTable",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "Database",
+          "value" : "catalogTable"
+        }, {
+          "icon" : "DeltaLogoIcon",
+          "label" : "Delta",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/delta",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "delta"
+        }, {
+          "icon" : "FileIcon",
+          "label" : "Xlsx",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/xlsx",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "xlsx"
+        }, {
+          "icon" : "XmlIcon",
+          "label" : "Xml",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/xml",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "xml"
+        }, {
+          "icon" : "FixedFormatFileIcon",
+          "label" : "Fixed Format",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/fixedformat",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "fixedformat"
+        }, {
+          "icon" : "FtpIcon",
+          "label" : "Ftp",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/FTP",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "FTP"
+        }, {
+          "icon" : "JdbcFileIcon",
+          "label" : "JDBC",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/jdbc",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "Warehouse",
+          "value" : "jdbc"
+        }, {
+          "icon" : "FileIcon",
+          "label" : "Jdbc_query",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.1&projectSubscriptionProjectId=39&path=gems/JDBC_QUERY",
+            "projectId" : "39",
+            "projectName" : "ProphecySparkBasicsScala",
+            "version" : "0.1.1"
+          },
+          "type" : "File",
+          "value" : "JDBC_QUERY"
+        }, {
+          "icon" : "MongoDbIcon",
+          "label" : "Mongodb",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_40.git&subPath=&tag=0.0.3&projectSubscriptionProjectId=40&path=gems/mongodb",
+            "projectId" : "40",
+            "projectName" : "ProphecyWarehouseScala",
+            "version" : "0.0.3"
+          },
+          "type" : "Warehouse",
+          "value" : "mongodb"
+        }, {
+          "icon" : "RedshiftNewIcon",
+          "label" : "Redshift",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_40.git&subPath=&tag=0.0.3&projectSubscriptionProjectId=40&path=gems/redshift",
+            "projectId" : "40",
+            "projectName" : "ProphecyWarehouseScala",
+            "version" : "0.0.3"
+          },
+          "type" : "Warehouse",
+          "value" : "redshift"
+        }, {
+          "icon" : "SnowflakeLogoIcon",
+          "label" : "Snowflake",
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_40.git&subPath=&tag=0.0.3&projectSubscriptionProjectId=40&path=gems/snowflake",
+            "projectId" : "40",
+            "projectName" : "ProphecyWarehouseScala",
+            "version" : "0.0.3"
+          },
+          "type" : "Warehouse",
+          "value" : "snowflake"
+        } ],
+        "datasetId" : "datasets/src_config_csv",
+        "dataTypes" : [ {
+          "label" : "File",
+          "value" : "File",
+          "icon" : "File"
+        }, {
+          "label" : "Warehouse",
+          "value" : "Warehouse",
+          "icon" : "Database"
+        }, {
+          "label" : "Catalog Table",
+          "value" : "Database",
+          "icon" : "CatalogTable"
+        }, {
+          "label" : "Applications",
+          "value" : "WebApp",
+          "icon" : "WebApp"
+        } ],
+        "updated" : true,
+        "currentDatasetId" : "datasets/src_config_csv",
+        "componentInfo" : {
+          "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/csv",
+          "projectId" : "39",
+          "projectName" : "ProphecySparkBasicsScala",
+          "version" : "0.1.2"
+        },
+        "dataset" : {
+          "ignoreLeadingWhiteSpaceReading" : null,
+          "multiLine" : null,
+          "path" : "${CSV_DATASET_LOCATION}",
+          "ignoreTrailingWhiteSpaceReading" : null,
+          "maxColumns" : null,
+          "writeMode" : "error",
+          "description" : "This dataset extracts information from a CSV file, specifically the source configuration data. It includes a single column 'a' with string values. This data is useful for understanding the source configuration of the system and can be used for troubleshooting and debugging purposes.",
+          "separator" : ",",
+          "compression" : null,
+          "nullValue" : null,
+          "nanValue" : null,
+          "escapeQuotes" : null,
+          "charToEscapeQuoteEscaping" : null,
+          "skipFooters" : null,
+          "encoding" : null,
+          "inferSchema" : null,
+          "enforceSchema" : null,
+          "quoteAll" : null,
+          "ignoreLeadingWhiteSpaceWriting" : null,
+          "locale" : null,
+          "quote" : null,
+          "timestampFormat" : null,
+          "emptyValue" : null,
+          "recursiveFileLookup" : null,
+          "partitionColumns" : null,
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : { }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : { }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : { }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : { }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : { }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : { }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : { }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : { }
+            } ]
+          },
+          "escape" : null,
+          "unescapedQuoteHandling" : null,
+          "positiveInf" : null,
+          "skipHeaders" : null,
+          "comment" : null,
+          "lineSep" : null,
+          "samplingRatio" : null,
+          "dateFormat" : null,
+          "mode" : null,
+          "header" : true,
+          "columnNameOfCorruptRecord" : null,
+          "modifiedBefore" : null,
+          "ignoreTrailingWhiteSpaceWriting" : null,
+          "maxCharsPerColumn" : null,
+          "negativeInf" : null,
+          "createSingleOutputFile" : null,
+          "pathGlobFilter" : null,
+          "useSchema" : true,
+          "modifiedAfter" : null
+        },
+        "isNewDataset" : false,
+        "disabled" : false,
+        "datasetType" : "File"
+      }
+    },
+    "Ly2IBGE1CPgoC51992Ii-" : {
+      "id" : "Ly2IBGE1CPgoC51992Ii-",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_10",
+        "slug" : "Reformat_10",
+        "x" : -100,
+        "y" : 40,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tqkqxGfF-z674tNuf9UF_",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "dbBBb_rXY6Y3Tjj_5R8FF",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "_row_id" : "683143510",
+          "target" : "c_int",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "udf_add_one('$var1')"
+          },
+          "description" : ""
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    }
+  }
+}

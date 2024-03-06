@@ -1,0 +1,1458 @@
+{
+  "id" : "HDneCaIITZ9DiDOmDVQfx",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "0RlsEoIUD-vMkiK1bilf4",
+      "slug" : "in0",
+      "isStreaming" : false
+    }, {
+      "id" : "uRVCZbojWm9FrTTw2m2_a",
+      "slug" : "in1",
+      "isStreaming" : false
+    }, {
+      "id" : "3iOD5A69nLVpR5pECl_xb",
+      "slug" : "in2",
+      "isStreaming" : false
+    }, {
+      "id" : "Km5bFGNvyK6Nim-giTz0N",
+      "slug" : "in3",
+      "isStreaming" : false
+    }, {
+      "id" : "3J4unWMsQLWyqtWOghHpX",
+      "slug" : "in4",
+      "isStreaming" : false
+    }, {
+      "id" : "6A07D50dqqqjWPufex5c2",
+      "slug" : "in5",
+      "isStreaming" : false
+    }, {
+      "id" : "kS6F64op-t2Hh2hG0o02D",
+      "slug" : "in6",
+      "isStreaming" : false
+    }, {
+      "id" : "0Lb9uFOQTxsIYb0Kndfml",
+      "slug" : "in7",
+      "isStreaming" : false
+    }, {
+      "id" : "6O0ER09NlkIvUoMgKygxE",
+      "slug" : "in8",
+      "isStreaming" : false
+    }, {
+      "id" : "lY-S6FHNhUcAu7KEmZJlf",
+      "slug" : "in9",
+      "isStreaming" : false
+    }, {
+      "id" : "OQwnKpuaP2xuoXAEyfkq7",
+      "slug" : "in10",
+      "isStreaming" : false
+    }, {
+      "id" : "R4Qhwfaq-sDAHDj3m-ihg",
+      "slug" : "in11",
+      "isStreaming" : false
+    }, {
+      "id" : "TsOgQ_k2z-Sb1k0JWsG_2",
+      "slug" : "in12",
+      "isStreaming" : false
+    }, {
+      "id" : "tSFrdo2-Vn1TNyukjzNB9",
+      "slug" : "in13",
+      "isStreaming" : false
+    }, {
+      "id" : "MDwv5lbyhCWMIWrdkvPo5",
+      "slug" : "in14",
+      "isStreaming" : false
+    }, {
+      "id" : "Zg_qpF5u8GPXXGw252gC8",
+      "slug" : "in15",
+      "isStreaming" : false
+    }, {
+      "id" : "tlEfRQzShcJpb_Q8kaWIp",
+      "slug" : "in16",
+      "isStreaming" : false
+    }, {
+      "id" : "PK_uxkvHWZARRHsPWGP-A",
+      "slug" : "in17",
+      "isStreaming" : false
+    }, {
+      "id" : "pwVC9vWX_N5HvwJbR21BX",
+      "slug" : "in18",
+      "isStreaming" : false
+    }, {
+      "id" : "J8t8UdJm_WOhawv1LkklD",
+      "slug" : "in19",
+      "isStreaming" : false
+    }, {
+      "id" : "kHjVGyqnc0Tkkj71fWsFf",
+      "slug" : "in20",
+      "isStreaming" : false
+    }, {
+      "id" : "b8e_JGNr3DwhRxD1z6wz2",
+      "slug" : "in21",
+      "isStreaming" : false
+    }, {
+      "id" : "iAc7ZiTZSbGpU9GHtS2HZ",
+      "slug" : "in22",
+      "isStreaming" : false
+    }, {
+      "id" : "fuwIJlh5VXhq71fi3MOMQ",
+      "slug" : "in23",
+      "isStreaming" : false
+    }, {
+      "id" : "ovkI-CE8evJl1G8Xfib-i",
+      "slug" : "in24",
+      "isStreaming" : false
+    } ],
+    "outputs" : [ {
+      "id" : "Zwj7cTNbEVQRQxCPxwMtE",
+      "slug" : "out0",
+      "isStreaming" : false
+    }, {
+      "id" : "cmdS3t64csK0I0XtD9EJp",
+      "slug" : "out1",
+      "isStreaming" : false
+    }, {
+      "id" : "z7m3Lgc9vNChPS6h0WgRc",
+      "slug" : "out2",
+      "isStreaming" : false
+    }, {
+      "id" : "RdnX87-xIq_JySYFxcZWP",
+      "slug" : "out3",
+      "isStreaming" : false
+    }, {
+      "id" : "jY9BKgjNtF3m6QjQBcwF3",
+      "slug" : "out4",
+      "isStreaming" : false
+    }, {
+      "id" : "D5lGqn2Xitb1Pw0Y3qH9M",
+      "slug" : "out5",
+      "isStreaming" : false
+    }, {
+      "id" : "-7YNo-TFKalPQcPJ-8LYV",
+      "slug" : "out6",
+      "isStreaming" : false
+    }, {
+      "id" : "1991SFbORfjz6ZPbGeJEQ",
+      "slug" : "out7",
+      "isStreaming" : false
+    }, {
+      "id" : "MYhWRbVf8TWNIEDOjfiXN",
+      "slug" : "out8",
+      "isStreaming" : false
+    }, {
+      "id" : "OL5qeWg9BxoujOroBnRBH",
+      "slug" : "out9",
+      "isStreaming" : false
+    }, {
+      "id" : "dE8pCbZAPQHXR2D44lt7o",
+      "slug" : "out10",
+      "isStreaming" : false
+    }, {
+      "id" : "7v9A5ceBxqKwMlbZWZ618",
+      "slug" : "out11",
+      "isStreaming" : false
+    }, {
+      "id" : "b5ro38xtgjLyH_FgNoHpc",
+      "slug" : "out12",
+      "isStreaming" : false
+    }, {
+      "id" : "45YN58uPHw3cmtYKQ2EkS",
+      "slug" : "out13",
+      "isStreaming" : false
+    }, {
+      "id" : "wu25IqCSQrZCjg1kSMotI",
+      "slug" : "out14",
+      "isStreaming" : false
+    }, {
+      "id" : "0efeCjiOZIRtrFIWAfK52",
+      "slug" : "out15",
+      "isStreaming" : false
+    }, {
+      "id" : "QLkClrH4OU76-K_ujXdrY",
+      "slug" : "out16",
+      "isStreaming" : false
+    }, {
+      "id" : "-nirARK3-mi0FDqsxiuXs",
+      "slug" : "out17",
+      "isStreaming" : false
+    }, {
+      "id" : "fopidByty2d33ktDcRmsB",
+      "slug" : "out18",
+      "isStreaming" : false
+    }, {
+      "id" : "rDZJSTXC24Bpe5LDaYA90",
+      "slug" : "out19",
+      "isStreaming" : false
+    }, {
+      "id" : "ZZ8wqGwmDND_vrrygOi7E",
+      "slug" : "out20",
+      "isStreaming" : false
+    }, {
+      "id" : "ozuzdPT8Kft4jH-HbpEY2",
+      "slug" : "out21",
+      "isStreaming" : false
+    }, {
+      "id" : "4aTwmeOzQbACvAUuDpwxE",
+      "slug" : "out22",
+      "isStreaming" : false
+    }, {
+      "id" : "_s4KYeelL6t8-bfh4Dp7N",
+      "slug" : "out23",
+      "isStreaming" : false
+    }, {
+      "id" : "_TsvP0H7IW_ItPxK8K6wZ",
+      "slug" : "out24",
+      "isStreaming" : false
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "properties" : {
+    "packageName" : "sg.subgraph25Ports"
+  },
+  "connections" : [ {
+    "id" : "Q5owImEk43zcdGCecb86s",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "0RlsEoIUD-vMkiK1bilf4",
+    "target" : "0lUDGn10ku3QHMLfNYUgn",
+    "targetPort" : "iWbiXBGubIB1uYnfNie4e"
+  }, {
+    "id" : "D7DBvoz3HhxkEnRYOEg17",
+    "source" : "0lUDGn10ku3QHMLfNYUgn",
+    "sourcePort" : "myjlh33fxkbZEDaQEW704",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "Zwj7cTNbEVQRQxCPxwMtE"
+  }, {
+    "id" : "lyzulutEol-vj_HcWhXAq",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "uRVCZbojWm9FrTTw2m2_a",
+    "target" : "XjkM5kujHXcoGLxjoM53D",
+    "targetPort" : "yNcCup26SEs0MrU9yfsPi"
+  }, {
+    "id" : "MNpEZ4DKN4VW3ItMXUFSw",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "3iOD5A69nLVpR5pECl_xb",
+    "target" : "d7TJjjXcfVGHwuKeunVmz",
+    "targetPort" : "mEJPxn2Re8PQYgGENs3Qd"
+  }, {
+    "id" : "8rdBGZ29L17vDX1QfyPft",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "Km5bFGNvyK6Nim-giTz0N",
+    "target" : "R2YEUNtyqPmzWn6Ewstu8",
+    "targetPort" : "3v4f273k7o7SDn989cY38"
+  }, {
+    "id" : "As2I7v5E2QatOc5EPbil8",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "3J4unWMsQLWyqtWOghHpX",
+    "target" : "F1KB0qttomRZjPt-HReRZ",
+    "targetPort" : "vdIhCKQlMlOurQxH7CCnC"
+  }, {
+    "id" : "S9fRja0IfN1fJ0MBgOcTr",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "6A07D50dqqqjWPufex5c2",
+    "target" : "zqCNQYnHnQVvicnpadLLQ",
+    "targetPort" : "ANE1a5wiT2VeMadJYGV1X"
+  }, {
+    "id" : "blWhXuxy2j8J5505dUOA-",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "kS6F64op-t2Hh2hG0o02D",
+    "target" : "W31NO6DwoSJcbDjCcSo2Z",
+    "targetPort" : "8L8c8ExDu0HPccC7agHhL"
+  }, {
+    "id" : "uZ2WZrwLTCHCwtcblMAjH",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "0Lb9uFOQTxsIYb0Kndfml",
+    "target" : "_07RQRwb_8i_noXVM7wHN",
+    "targetPort" : "Fbq2vZEar2Wsr9oeJ4B5x"
+  }, {
+    "id" : "Qrqs7XL3SrW2L-31A2OAn",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "6O0ER09NlkIvUoMgKygxE",
+    "target" : "WZa1cL93tmCPZLMbmlFJ-",
+    "targetPort" : "Sf7mUxn0-2o4EADufxtcB"
+  }, {
+    "id" : "ul2CaNN5Z1yOys3D-zT-g",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "lY-S6FHNhUcAu7KEmZJlf",
+    "target" : "csf7DdfXPCvYMjL_zeLJ8",
+    "targetPort" : "9gri8vU4wfefWskEDfkzu"
+  }, {
+    "id" : "zKEOAGEWVfZcau2GHht98",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "OQwnKpuaP2xuoXAEyfkq7",
+    "target" : "Kl4z0BeZDElu5xXGQPpfn",
+    "targetPort" : "BTTN13RxsCsdJ8tO7MqAC"
+  }, {
+    "id" : "vovYxiMGOhhxTJ0b6xErh",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "R4Qhwfaq-sDAHDj3m-ihg",
+    "target" : "MB7GKq8R7pMuVN2XL5tiX",
+    "targetPort" : "wAMrEDB3W5Koi-fomKgob"
+  }, {
+    "id" : "qBDGBAmgAv_xoDM4Lzr6J",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "tSFrdo2-Vn1TNyukjzNB9",
+    "target" : "wA0so9--XMVsg4mkz9icC",
+    "targetPort" : "lWCjEDwruW3frrLyh-tuI"
+  }, {
+    "id" : "3I5YJZpPl-klsfvBk3lIw",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "MDwv5lbyhCWMIWrdkvPo5",
+    "target" : "OXYri9GcG-Ahqwk4RVGrP",
+    "targetPort" : "mZSpPahPx2o0p2OWXfzlw"
+  }, {
+    "id" : "7LxMFznUsUj54q6GXDBsB",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "ovkI-CE8evJl1G8Xfib-i",
+    "target" : "PfkmbVihVaj0qhfRFM_U8",
+    "targetPort" : "5u2rTs2B87wxLujJmUamx"
+  }, {
+    "id" : "ZxHi75l8KoX7wmjreM6f0",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "fuwIJlh5VXhq71fi3MOMQ",
+    "target" : "WGRF8jNK5X7BJDjTbRkaN",
+    "targetPort" : "tAf-3Zj-kGG4rzn2efWFz"
+  }, {
+    "id" : "uQxc9uUUTB68gYyQWeEm2",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "iAc7ZiTZSbGpU9GHtS2HZ",
+    "target" : "DHpvZKs-9iJVD_i_B9efa",
+    "targetPort" : "SSnKFqqkKycYvIpHddlSJ"
+  }, {
+    "id" : "XHdCzDFnv2PSNiZRnBju9",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "b8e_JGNr3DwhRxD1z6wz2",
+    "target" : "_i_bUlZR9EeJW7h4TP89A",
+    "targetPort" : "riYj68bW0Zd-PDirDALkN"
+  }, {
+    "id" : "0zCYwwBgAycR62gYHDlgr",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "kHjVGyqnc0Tkkj71fWsFf",
+    "target" : "_yF0-f8Y8JG_MT7e7YkgY",
+    "targetPort" : "Kbo-hdJtvnxddm_OUFq1L"
+  }, {
+    "id" : "cUgwk5yqqda73NDwFQYKT",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "Zg_qpF5u8GPXXGw252gC8",
+    "target" : "AGMEgdHeRxNgDMl3zSixC",
+    "targetPort" : "5qQhO52UCQNa5kqTnZ8QU"
+  }, {
+    "id" : "kuzklXh69ydWDvu7jDN-9",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "tlEfRQzShcJpb_Q8kaWIp",
+    "target" : "hcted-opDPmsS2F0iIsaq",
+    "targetPort" : "R-dRDWLaVUJK_XK9l7Vlx"
+  }, {
+    "id" : "QwoWX132zsm7ZHsL1M3nf",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "PK_uxkvHWZARRHsPWGP-A",
+    "target" : "1XRsxfoxIpDgcPjS5QRuM",
+    "targetPort" : "eCNeUDDJkbZIEfUIUZHBz"
+  }, {
+    "id" : "qdg1-nMqt4pXLUmJdL5HJ",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "pwVC9vWX_N5HvwJbR21BX",
+    "target" : "pAUErZscvRd3ecvpYFTSP",
+    "targetPort" : "o76L97QvrDeQslJ2G8583"
+  }, {
+    "id" : "rBM4KsUflQ8t4c6dHjZXm",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "J8t8UdJm_WOhawv1LkklD",
+    "target" : "PtHBDluFM8doinLtxNW3_",
+    "targetPort" : "0Si5r-rM9cySlkfnwVXhO"
+  }, {
+    "id" : "4XBefiJWg65XVGEMOo4Dc",
+    "source" : "XjkM5kujHXcoGLxjoM53D",
+    "sourcePort" : "xtduz2hcKaC2x5VdgWMu0",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "cmdS3t64csK0I0XtD9EJp"
+  }, {
+    "id" : "QG6eEmBggTeqPO1dVI6j2",
+    "source" : "wA0so9--XMVsg4mkz9icC",
+    "sourcePort" : "T1jpoQUMAelXp1JlByYpr",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "z7m3Lgc9vNChPS6h0WgRc"
+  }, {
+    "id" : "HB29CowFJm9UUlKQVJUx9",
+    "source" : "_yF0-f8Y8JG_MT7e7YkgY",
+    "sourcePort" : "-p3gim2__k-2gSfyI8Ci9",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "RdnX87-xIq_JySYFxcZWP"
+  }, {
+    "id" : "LdTro67k4QmZYmfGJYqwU",
+    "source" : "1XRsxfoxIpDgcPjS5QRuM",
+    "sourcePort" : "sElsplEne1JG0mieoKA75",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "_TsvP0H7IW_ItPxK8K6wZ"
+  }, {
+    "id" : "EFPtxH7rXYJE12DOZNRRS",
+    "source" : "AGMEgdHeRxNgDMl3zSixC",
+    "sourcePort" : "c7jmPB9yMta9IpXjsSX0R",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "_s4KYeelL6t8-bfh4Dp7N"
+  }, {
+    "id" : "ILY2TarHTckqmAaNgDa49",
+    "source" : "hcted-opDPmsS2F0iIsaq",
+    "sourcePort" : "runPfslCVPqtsLgVlUrCI",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "4aTwmeOzQbACvAUuDpwxE"
+  }, {
+    "id" : "xXa1EsqKCEzOoeqHs06Wt",
+    "source" : "pAUErZscvRd3ecvpYFTSP",
+    "sourcePort" : "-y03ZmK8tqaMA8VlZTQZF",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "OL5qeWg9BxoujOroBnRBH"
+  }, {
+    "id" : "Bj4WrE-28Bdxhzayhcvzg",
+    "source" : "_i_bUlZR9EeJW7h4TP89A",
+    "sourcePort" : "rQZVNhadWthQK3Tclh__m",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "jY9BKgjNtF3m6QjQBcwF3"
+  }, {
+    "id" : "yX6psHbhN_E3BACIGtEXB",
+    "source" : "MB7GKq8R7pMuVN2XL5tiX",
+    "sourcePort" : "lvaRl0DNUt_3Y-iuljmi5",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "D5lGqn2Xitb1Pw0Y3qH9M"
+  }, {
+    "id" : "XzbEti2w4eEGcd4VRRuPT",
+    "source" : "d7TJjjXcfVGHwuKeunVmz",
+    "sourcePort" : "KYxkLRYlevYkECu-LJQPd",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "-7YNo-TFKalPQcPJ-8LYV"
+  }, {
+    "id" : "kB2TWZzflbQTcVPZkPlQP",
+    "source" : "R2YEUNtyqPmzWn6Ewstu8",
+    "sourcePort" : "dGXfsueoFvMEBnqXL940H",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "1991SFbORfjz6ZPbGeJEQ"
+  }, {
+    "id" : "_bNI_c8gplK45rbTKnUMH",
+    "source" : "DHpvZKs-9iJVD_i_B9efa",
+    "sourcePort" : "IoRLtqBv7rhGKJoXBrcRn",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "MYhWRbVf8TWNIEDOjfiXN"
+  }, {
+    "id" : "Ruzr8rwjcCy-L7rGeVsSH",
+    "source" : "F1KB0qttomRZjPt-HReRZ",
+    "sourcePort" : "FC22tdVzyhd0Gu9RqeIsJ",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "dE8pCbZAPQHXR2D44lt7o"
+  }, {
+    "id" : "qZq0PLmiIdN83ucBFh1P4",
+    "source" : "PtHBDluFM8doinLtxNW3_",
+    "sourcePort" : "lx1pk3vdByRjZuYFSkV4t",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "ozuzdPT8Kft4jH-HbpEY2"
+  }, {
+    "id" : "9S2u9QzF5ggtgKKHZzxRt",
+    "source" : "WGRF8jNK5X7BJDjTbRkaN",
+    "sourcePort" : "7o_hHGQ7L2bowe9_QzQ6O",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "ZZ8wqGwmDND_vrrygOi7E"
+  }, {
+    "id" : "gHGdCKAmIEVkW7mGa577w",
+    "source" : "csf7DdfXPCvYMjL_zeLJ8",
+    "sourcePort" : "uVvtFub8WJJzkMejMWDPo",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "7v9A5ceBxqKwMlbZWZ618"
+  }, {
+    "id" : "mZ-HXQ9RJLzZF9GdcmkMv",
+    "source" : "_07RQRwb_8i_noXVM7wHN",
+    "sourcePort" : "vaOcRgc2mbtaDqf2bu-Ru",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "b5ro38xtgjLyH_FgNoHpc"
+  }, {
+    "id" : "fu2ktqAgossQbv5boJWX_",
+    "source" : "zqCNQYnHnQVvicnpadLLQ",
+    "sourcePort" : "mlZ3W7cpFwN_cWHqrPgTM",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "45YN58uPHw3cmtYKQ2EkS"
+  }, {
+    "id" : "3ijsVfEjC-Wi3kL5U4sR-",
+    "source" : "OXYri9GcG-Ahqwk4RVGrP",
+    "sourcePort" : "oMlE64trLxt_hyzCVkZIL",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "wu25IqCSQrZCjg1kSMotI"
+  }, {
+    "id" : "Q_N6qzWxhfkzQA4lLfWYf",
+    "source" : "Kl4z0BeZDElu5xXGQPpfn",
+    "sourcePort" : "UpHnH8z8VhsbOvqxd4gtI",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "0efeCjiOZIRtrFIWAfK52"
+  }, {
+    "id" : "W3S7LEhdcXMmvLy_t22_b",
+    "source" : "PfkmbVihVaj0qhfRFM_U8",
+    "sourcePort" : "Oap14XosIGUkfLaJoWRe6",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "rDZJSTXC24Bpe5LDaYA90"
+  }, {
+    "id" : "SSED3RtTtRrMwGJ_ni9aT",
+    "source" : "W31NO6DwoSJcbDjCcSo2Z",
+    "sourcePort" : "Pc6acFxeASFlht1zF1g_U",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "QLkClrH4OU76-K_ujXdrY"
+  }, {
+    "id" : "_GtK9BE9T0w9drzdQANvK",
+    "source" : "HDneCaIITZ9DiDOmDVQfx",
+    "sourcePort" : "TsOgQ_k2z-Sb1k0JWsG_2",
+    "target" : "hfpqtJ-VKgnD43jt0PcUv",
+    "targetPort" : "7GjWDtg_Yk2opfFGXcVOj"
+  }, {
+    "id" : "VjFJrKA2SYQBZivzQ5OeZ",
+    "source" : "hfpqtJ-VKgnD43jt0PcUv",
+    "sourcePort" : "AhlXGiufCCZCdhqE1ZLs2",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "-nirARK3-mi0FDqsxiuXs"
+  }, {
+    "id" : "zATB4oA2y9-mUtmGKNfLO",
+    "source" : "WZa1cL93tmCPZLMbmlFJ-",
+    "sourcePort" : "8uJC5NQYsU8fZeHpTIttV",
+    "target" : "HDneCaIITZ9DiDOmDVQfx",
+    "targetPort" : "fopidByty2d33ktDcRmsB"
+  } ],
+  "processes" : {
+    "_yF0-f8Y8JG_MT7e7YkgY" : {
+      "id" : "_yF0-f8Y8JG_MT7e7YkgY",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1_3",
+        "slug" : "Reformat_1_1_1_1_3",
+        "x" : 120,
+        "y" : 3120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Kbo-hdJtvnxddm_OUFq1L",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "-p3gim2__k-2gSfyI8Ci9",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "PtHBDluFM8doinLtxNW3_" : {
+      "id" : "PtHBDluFM8doinLtxNW3_",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1_5_1",
+        "slug" : "Reformat_1_1_1_1_5_1",
+        "x" : 120,
+        "y" : 4520,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "0Si5r-rM9cySlkfnwVXhO",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "lx1pk3vdByRjZuYFSkV4t",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "DHpvZKs-9iJVD_i_B9efa" : {
+      "id" : "DHpvZKs-9iJVD_i_B9efa",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1_4",
+        "slug" : "Reformat_1_1_1_1_4",
+        "x" : 120,
+        "y" : 3320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SSnKFqqkKycYvIpHddlSJ",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "IoRLtqBv7rhGKJoXBrcRn",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "PfkmbVihVaj0qhfRFM_U8" : {
+      "id" : "PfkmbVihVaj0qhfRFM_U8",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1_2",
+        "slug" : "Reformat_1_1_1_1_2",
+        "x" : 120,
+        "y" : 2920,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5u2rTs2B87wxLujJmUamx",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "Oap14XosIGUkfLaJoWRe6",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "WZa1cL93tmCPZLMbmlFJ-" : {
+      "id" : "WZa1cL93tmCPZLMbmlFJ-",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_4",
+        "slug" : "Reformat_1_1_4",
+        "x" : 120,
+        "y" : 1720,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Sf7mUxn0-2o4EADufxtcB",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "8uJC5NQYsU8fZeHpTIttV",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "1XRsxfoxIpDgcPjS5QRuM" : {
+      "id" : "1XRsxfoxIpDgcPjS5QRuM",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1_7_1",
+        "slug" : "Reformat_1_1_1_1_7_1",
+        "x" : 120,
+        "y" : 4120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "eCNeUDDJkbZIEfUIUZHBz",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "sElsplEne1JG0mieoKA75",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "hfpqtJ-VKgnD43jt0PcUv" : {
+      "id" : "hfpqtJ-VKgnD43jt0PcUv",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_2",
+        "slug" : "Reformat_2",
+        "x" : -720,
+        "y" : 1000,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "7GjWDtg_Yk2opfFGXcVOj",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "AhlXGiufCCZCdhqE1ZLs2",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "_07RQRwb_8i_noXVM7wHN" : {
+      "id" : "_07RQRwb_8i_noXVM7wHN",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_5",
+        "slug" : "Reformat_1_1_5",
+        "x" : 120,
+        "y" : 1920,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Fbq2vZEar2Wsr9oeJ4B5x",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "vaOcRgc2mbtaDqf2bu-Ru",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "pAUErZscvRd3ecvpYFTSP" : {
+      "id" : "pAUErZscvRd3ecvpYFTSP",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1_5_2",
+        "slug" : "Reformat_1_1_1_1_5_2",
+        "x" : 120,
+        "y" : 4720,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "o76L97QvrDeQslJ2G8583",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "-y03ZmK8tqaMA8VlZTQZF",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "wA0so9--XMVsg4mkz9icC" : {
+      "id" : "wA0so9--XMVsg4mkz9icC",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1",
+        "slug" : "Reformat_1_1_1_1",
+        "x" : 120,
+        "y" : 2520,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "lWCjEDwruW3frrLyh-tuI",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "T1jpoQUMAelXp1JlByYpr",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "MB7GKq8R7pMuVN2XL5tiX" : {
+      "id" : "MB7GKq8R7pMuVN2XL5tiX",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1",
+        "slug" : "Reformat_1_1_1",
+        "x" : 120,
+        "y" : 1120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wAMrEDB3W5Koi-fomKgob",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "lvaRl0DNUt_3Y-iuljmi5",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "Kl4z0BeZDElu5xXGQPpfn" : {
+      "id" : "Kl4z0BeZDElu5xXGQPpfn",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_2",
+        "slug" : "Reformat_1_1_2",
+        "x" : 120,
+        "y" : 1320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BTTN13RxsCsdJ8tO7MqAC",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "UpHnH8z8VhsbOvqxd4gtI",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "W31NO6DwoSJcbDjCcSo2Z" : {
+      "id" : "W31NO6DwoSJcbDjCcSo2Z",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_6",
+        "slug" : "Reformat_1_1_6",
+        "x" : 120,
+        "y" : 2120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8L8c8ExDu0HPccC7agHhL",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "Pc6acFxeASFlht1zF1g_U",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "d7TJjjXcfVGHwuKeunVmz" : {
+      "id" : "d7TJjjXcfVGHwuKeunVmz",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_3",
+        "slug" : "Reformat_1_3",
+        "x" : 120,
+        "y" : 720,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mEJPxn2Re8PQYgGENs3Qd",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "KYxkLRYlevYkECu-LJQPd",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "XjkM5kujHXcoGLxjoM53D" : {
+      "id" : "XjkM5kujHXcoGLxjoM53D",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_4",
+        "slug" : "Reformat_1_4",
+        "x" : 120,
+        "y" : 920,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yNcCup26SEs0MrU9yfsPi",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "xtduz2hcKaC2x5VdgWMu0",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "WGRF8jNK5X7BJDjTbRkaN" : {
+      "id" : "WGRF8jNK5X7BJDjTbRkaN",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1_5",
+        "slug" : "Reformat_1_1_1_1_5",
+        "x" : 120,
+        "y" : 3520,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tAf-3Zj-kGG4rzn2efWFz",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "7o_hHGQ7L2bowe9_QzQ6O",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "OXYri9GcG-Ahqwk4RVGrP" : {
+      "id" : "OXYri9GcG-Ahqwk4RVGrP",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1_6",
+        "slug" : "Reformat_1_1_1_1_6",
+        "x" : 120,
+        "y" : 3720,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mZSpPahPx2o0p2OWXfzlw",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "oMlE64trLxt_hyzCVkZIL",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "AGMEgdHeRxNgDMl3zSixC" : {
+      "id" : "AGMEgdHeRxNgDMl3zSixC",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1_7",
+        "slug" : "Reformat_1_1_1_1_7",
+        "x" : 120,
+        "y" : 3920,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5qQhO52UCQNa5kqTnZ8QU",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "c7jmPB9yMta9IpXjsSX0R",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "_i_bUlZR9EeJW7h4TP89A" : {
+      "id" : "_i_bUlZR9EeJW7h4TP89A",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1_1",
+        "slug" : "Reformat_1_1_1_1_1",
+        "x" : 120,
+        "y" : 2720,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "riYj68bW0Zd-PDirDALkN",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "rQZVNhadWthQK3Tclh__m",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "F1KB0qttomRZjPt-HReRZ" : {
+      "id" : "F1KB0qttomRZjPt-HReRZ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1",
+        "slug" : "Reformat_1_1",
+        "x" : 120,
+        "y" : 320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vdIhCKQlMlOurQxH7CCnC",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "FC22tdVzyhd0Gu9RqeIsJ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "zqCNQYnHnQVvicnpadLLQ" : {
+      "id" : "zqCNQYnHnQVvicnpadLLQ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_7",
+        "slug" : "Reformat_1_1_7",
+        "x" : 120,
+        "y" : 2320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ANE1a5wiT2VeMadJYGV1X",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "mlZ3W7cpFwN_cWHqrPgTM",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "0lUDGn10ku3QHMLfNYUgn" : {
+      "id" : "0lUDGn10ku3QHMLfNYUgn",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : 120,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iWbiXBGubIB1uYnfNie4e",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "myjlh33fxkbZEDaQEW704",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "hcted-opDPmsS2F0iIsaq" : {
+      "id" : "hcted-opDPmsS2F0iIsaq",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1_1_7_2",
+        "slug" : "Reformat_1_1_1_1_7_2",
+        "x" : 120,
+        "y" : 4320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "R-dRDWLaVUJK_XK9l7Vlx",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "runPfslCVPqtsLgVlUrCI",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "R2YEUNtyqPmzWn6Ewstu8" : {
+      "id" : "R2YEUNtyqPmzWn6Ewstu8",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_2",
+        "slug" : "Reformat_1_2",
+        "x" : 120,
+        "y" : 520,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3v4f273k7o7SDn989cY38",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "dGXfsueoFvMEBnqXL940H",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    },
+    "csf7DdfXPCvYMjL_zeLJ8" : {
+      "id" : "csf7DdfXPCvYMjL_zeLJ8",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_3",
+        "slug" : "Reformat_1_1_3",
+        "x" : 120,
+        "y" : 1520,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9gri8vU4wfefWskEDfkzu",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "uVvtFub8WJJzkMejMWDPo",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.1.2&projectSubscriptionProjectId=39&path=gems/Reformat",
+        "projectId" : "39",
+        "projectName" : "ProphecySparkBasicsScala",
+        "version" : "0.1.2"
+      }
+    }
+  }
+}

@@ -1,0 +1,462 @@
+{
+  "metainfo" : {
+    "type" : "OpenSource",
+    "fabricId" : "2447",
+    "jobId" : "jobs/Staging_Sc_airflow_OS",
+    "name" : "Staging_Sc_airflow_OS",
+    "dagName" : "staging_abhisheks_e2etests_Scala_Sanity_Project_Staging_Sc_airflow_OS",
+    "schedule" : "None",
+    "enabled" : false,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "ignore_first_depends_on_past" : true,
+      "do_xcom_push" : true
+    },
+    "availableFabrics" : [ {
+      "id" : "22",
+      "name" : "dev_airflow_prophecy_managed",
+      "trialStartDate" : 1695736560346
+    }, {
+      "id" : "25",
+      "name" : "dev_airflow_mwaa"
+    }, {
+      "id" : "1013",
+      "name" : "dev_airflow_253"
+    }, {
+      "id" : "24",
+      "name" : "dev_airflow"
+    }, {
+      "id" : "2393",
+      "name" : "dev_airflow_263"
+    }, {
+      "id" : "2418",
+      "name" : "dev_aiflow_open_source",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    }, {
+      "id" : "2442",
+      "name" : "Automation_python_AirflowOpenSource",
+      "artifactsLocation" : "/mnt/airflow/test/artifacts"
+    }, {
+      "id" : "2447",
+      "name" : "sanity_airflow_os",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    } ],
+    "catchup" : true,
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : { }
+      },
+      "params" : { },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ {
+      "id" : "49/functions/airflowFunctions/squared_numbers",
+      "name" : "squared_numbers",
+      "code" : "def squared_numbers(number):\n    print('hello')\n    return (number*number)/d",
+      "initCode" : "d=10",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/join_2_strings",
+      "name" : "join_2_strings",
+      "code" : "def join_2_strings(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/delete_me",
+      "name" : "delete_me",
+      "code" : "def delete_me(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/load_resource",
+      "name" : "load_resource",
+      "code" : "def load_resource(dag_dir, dag_id, relative_filepath):\n    import os\n    import zipfile\n    import tempfile\n\n    res = \"\"\n    zip_file_found = None\n    for filename in os.listdir(dag_dir):\n        if filename.startswith(dag_id) and filename.endswith('.zip'):\n            zip_file_found = os.path.join(dag_dir, filename)\n            break\n\n    if not zip_file_found:\n        print(f\"Zip for dag: {dag_id} not found\")\n        return res\n\n    with tempfile.TemporaryDirectory() as tmpdirname:\n        with zipfile.ZipFile(zip_file_found, 'r') as zip_ref:\n            zip_ref.extractall(tmpdirname)\n\n\n        target_file_path = os.path.join(tmpdirname, dag_id.lower() , 'resources', relative_filepath)\n        if os.path.exists(target_file_path):\n            with open(target_file_path, 'r') as file:\n                res = file.read()\n        return res",
+      "initCode" : "",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    }, {
+      "id" : "49/functions/airflowFunctions/get_feed_config",
+      "name" : "get_feed_config",
+      "code" : "def get_feed_config(file_contents, search_keys):\n    for line in file_contents.splitlines():\n        # Split the line by commas and strip to remove leading/trailing whitespaces\n        fields = [field.strip() for field in line.split(',')]\n\n        # Check if there are enough fields\n        if len(fields) < 32:\n            continue\n\n        # Extract the first 5 fields as keys\n        keys = fields[:5]\n\n        # Check if the current keys match the search keys\n        if keys == search_keys:\n            # Extract and return the remaining 27 fields as values\n            return tuple(fields[5:])\n\n    # Return an empty tuple if the key is not found or if the value is empty\n    return ()",
+      "initCode" : "",
+      "projectId" : "49",
+      "projectName" : "Scala_Sanity_Project"
+    } ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false
+    }
+  },
+  "processes" : {
+    "HgCh-xJ1WjhvwXAvzIfEL" : {
+      "id" : "HgCh-xJ1WjhvwXAvzIfEL",
+      "component" : "TriggerDag",
+      "metadata" : {
+        "label" : "TriggerDag_1",
+        "slug" : "TriggerDag_1",
+        "x" : -760,
+        "y" : 100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-3ZZpNyfiJ9zk2_ftRoo0",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "LJqJYEkhZFXkwfoOofXev",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "pokeInterval" : null,
+        "resetDagRun" : false,
+        "executionDate" : null,
+        "dagId" : {
+          "type" : "literal",
+          "value" : "test_sony_livy_os_airflow_os"
+        },
+        "selectionType" : "dag",
+        "conf" : {
+          "type" : "literal",
+          "value" : null
+        },
+        "jobId" : null,
+        "waitForCompletion" : false,
+        "runId" : null,
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "ESEzcWlxNQ4_YhFCN6_b7" : {
+      "id" : "ESEzcWlxNQ4_YhFCN6_b7",
+      "component" : "Python",
+      "metadata" : {
+        "label" : "Python_1",
+        "slug" : "Python_1",
+        "x" : -760,
+        "y" : 300
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_3uIRd6VsU4FxCxw9g3Mf",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "nKzBXFXa9rqLzSeqCBgdr",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "templatesExts" : null,
+        "code" : "def pyth():\n    return \"test_sony_livy_os_airflow_os\"",
+        "valueInLogs" : true,
+        "opArgs" : null,
+        "templatesDict" : null,
+        "taskId" : null,
+        "opKwargs" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "xwIBLY31kJ9QK8cJIbZgy" : {
+      "id" : "xwIBLY31kJ9QK8cJIbZgy",
+      "component" : "Slack",
+      "metadata" : {
+        "label" : "Slack_1",
+        "slug" : "Slack_1",
+        "x" : -1220,
+        "y" : 960
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "y2FDVPOHLVpBXxoRp7Gj0",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "i1ebb5AsSHfhLQqokJVOc",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "channel" : "sonytest",
+        "text" : "hey!",
+        "token" : null,
+        "slackConnectionId" : "slack_default",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "KhAr8IcQA-2sSD7ZLgsXl" : {
+      "id" : "KhAr8IcQA-2sSD7ZLgsXl",
+      "component" : "TaskGroup",
+      "metadata" : {
+        "label" : "TaskGroup_1",
+        "slug" : "TaskGroup_1",
+        "x" : -760,
+        "y" : -100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "jBBe-HvaHFmHUshXieDte",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "AbcYASZ3GjE1Or1tUp-aN",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "taskId" : null
+      },
+      "connections" : [ {
+        "id" : "Rp9m9jtnWckTEWaVuscPE",
+        "source" : "716FHQVt-1fhNZDyGK_G5",
+        "target" : "OyLNeL5ojemlOI7ctD-aa",
+        "sourcePort" : "FDnBYGTVNiSlePrkrLSMZ",
+        "targetPort" : "BpIJs3fSHHVtcREF0na17"
+      }, {
+        "id" : "5YpWHhXthW6fimhpXYPPK",
+        "source" : "716FHQVt-1fhNZDyGK_G5",
+        "target" : "Boa574BQl68EP6O0GCPnO",
+        "sourcePort" : "FDnBYGTVNiSlePrkrLSMZ",
+        "targetPort" : "agzf5t-3OlQxSJR4DgEfQ"
+      } ],
+      "processes" : {
+        "Gp01ey-6f5x5hpOXyeTPC" : {
+          "id" : "Gp01ey-6f5x5hpOXyeTPC",
+          "component" : "Slack",
+          "metadata" : {
+            "label" : "Slack_1_1",
+            "slug" : "Slack_1_1",
+            "x" : 80,
+            "y" : 240
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "5KBGAl6bdTRITdXIB8EPR",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "P_s5EsPqviPJREJNfi4qp",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "channel" : "sonytest",
+            "text" : "hey! from scala sanity job",
+            "token" : null,
+            "slackConnectionId" : "slack_default",
+            "taskId" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        },
+        "OyLNeL5ojemlOI7ctD-aa" : {
+          "id" : "OyLNeL5ojemlOI7ctD-aa",
+          "component" : "Script",
+          "metadata" : {
+            "label" : "script1_1",
+            "slug" : "script1_1",
+            "x" : 600,
+            "y" : 120
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "BpIJs3fSHHVtcREF0na17",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "KEXivCy6iUpazBOiUlmwU",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "code" : "echo \"sdaf\"",
+            "language" : "bash",
+            "taskId" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        },
+        "Boa574BQl68EP6O0GCPnO" : {
+          "id" : "Boa574BQl68EP6O0GCPnO",
+          "component" : "Email",
+          "metadata" : {
+            "label" : "Email_1_1",
+            "slug" : "Email_1_1",
+            "x" : -60,
+            "y" : 240
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "agzf5t-3OlQxSJR4DgEfQ",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "OSlcUM6SxQmF7fFt9Wkf_",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "emailCC" : null,
+            "subject" : "test os",
+            "emailBCC" : null,
+            "emailTo" : "sony@prophecy.io",
+            "emailConnectionId" : "email_default",
+            "htmlContent" : "test os",
+            "taskId" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        },
+        "716FHQVt-1fhNZDyGK_G5" : {
+          "id" : "716FHQVt-1fhNZDyGK_G5",
+          "component" : "Branch",
+          "metadata" : {
+            "label" : "Branch_1_1",
+            "slug" : "Branch_1_1",
+            "x" : -660,
+            "y" : -300
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "4Qb0XbAnQy3OkgPeJ0UrO",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "FDnBYGTVNiSlePrkrLSMZ",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "callback" : "def branchtest():\n    return \"script1_1\"",
+            "taskId" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        }
+      }
+    },
+    "X8aBRg0MIxnagDK3Fc6Pk" : {
+      "id" : "X8aBRg0MIxnagDK3Fc6Pk",
+      "component" : "Email",
+      "metadata" : {
+        "label" : "Email_1",
+        "slug" : "Email_1",
+        "x" : -1020,
+        "y" : 60
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-6cBABQGD0PyMXZkE7JrK",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "5EAn7FqnEGXuUcyQqsYR6",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "emailCC" : null,
+        "subject" : "test os",
+        "emailBCC" : null,
+        "emailTo" : "sony@prophecy.io",
+        "emailConnectionId" : "email_default",
+        "htmlContent" : "test os",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "zRirQYVPHPvm0L7fqsNgF" : {
+      "id" : "zRirQYVPHPvm0L7fqsNgF",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "script1",
+        "slug" : "script1",
+        "x" : -1020,
+        "y" : 260
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "YLJvAXu2kq_8TbZTBAKKp",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "-buXa6XBXmeClq7wu224Z",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "echo \"sdaf\"",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "q-9EfuXxljdaJrFfAjzaG" : {
+      "id" : "q-9EfuXxljdaJrFfAjzaG",
+      "component" : "Branch",
+      "metadata" : {
+        "label" : "Branch_1",
+        "slug" : "Branch_1",
+        "x" : -1220,
+        "y" : 160
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "7lXGPAP3DN_aFIZky9KFK",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "HUPGUo6_TmDOBWJrqGOyZ",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "callback" : "def branchtest():\n    return \"script1\"",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ {
+    "id" : "_lUY9EHnFJ9YtAwhbnhK_",
+    "source" : "q-9EfuXxljdaJrFfAjzaG",
+    "target" : "zRirQYVPHPvm0L7fqsNgF",
+    "sourcePort" : "HUPGUo6_TmDOBWJrqGOyZ",
+    "targetPort" : "YLJvAXu2kq_8TbZTBAKKp"
+  }, {
+    "id" : "CPd8MRwDPdnJ5brw-La2u",
+    "source" : "q-9EfuXxljdaJrFfAjzaG",
+    "target" : "X8aBRg0MIxnagDK3Fc6Pk",
+    "sourcePort" : "HUPGUo6_TmDOBWJrqGOyZ",
+    "targetPort" : "-6cBABQGD0PyMXZkE7JrK"
+  } ]
+}

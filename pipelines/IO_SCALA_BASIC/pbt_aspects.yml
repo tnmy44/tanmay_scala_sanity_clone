@@ -1,0 +1,8 @@
+version: 1
+dependencies: []
+configurations:
+- default
+- test-common-with-another
+- newinstance1
+pipelineVersion:
+  version: '2'

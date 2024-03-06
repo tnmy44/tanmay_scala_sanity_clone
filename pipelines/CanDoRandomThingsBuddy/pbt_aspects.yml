@@ -1,0 +1,22 @@
+version: 1
+configurations:
+- sdds
+- default
+dependencies:
+- type: workflow
+  id: uK21Xn3lreGQIkifqEWcI
+  name: org.mongodb.spark:mongo-spark-connector_2.12:10.2.0
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: AUatpIdXcFRtneUplIeAv
+  name: org.mongodb:mongodb-driver:3.12.14
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: DZeetQ6b4scYIpQ1jatS6
+  name: com.amazon.redshift:redshift-jdbc42:2.1.0.10
+  enabled: true
+  entity: Pipeline
+pipelineVersion:
+  version: '2'
